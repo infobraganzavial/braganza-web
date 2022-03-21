@@ -1,6 +1,6 @@
 function App() {
   return (
-    <h1>Braganza Vial</h1>
+    <h1>Braganza Vial - Testing environment</h1>
   );
 }
 
