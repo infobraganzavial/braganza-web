@@ -1,6 +1,15 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+// Components
+import Layout from './components/layout/Layout';
+
 function App() {
   return (
-    <h1>Braganza Vial</h1>
+    <Router>
+      <Routes>
+        <Route path="/*" element={<Layout />}/>
+      </Routes>
+    </Router>
   );
 }
 
