@@ -7,6 +7,7 @@ const Responsive = styled.div`
     ${device.tablet`
 
         .header {
+            flex-direction: row;
             padding: 0 20px;
             justify-content: space-between;
         }
@@ -27,6 +28,10 @@ const Responsive = styled.div`
             align-items: flex-start;
         }
 
+        .menubar__border {
+            display: none;
+        }
+
         .active {
             left:0;
         }
@@ -37,6 +42,8 @@ const Responsive = styled.div`
             width: 100%;
         }
 
+        
+
         .menubar__menu-item.active .menubar__submenu-list {
             position: relative;
             background: var(--bgLight);
@@ -44,6 +51,10 @@ const Responsive = styled.div`
             & .menubar__submenu-item {
                 width: 100%;
             }
+        }
+
+        .menubar__menu-item {
+            display: block !important;
         }
     `}
 

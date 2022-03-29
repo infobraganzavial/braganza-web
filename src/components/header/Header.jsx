@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { generate as id } from 'shortid';
 
+// Helpers
+import colors from '../../theming/colors';
+
 import getSiblings from '../../helpers/getSiblings';
 
 const StyledHeader = styled.header`
@@ -15,9 +18,10 @@ const StyledHeader = styled.header`
     width: 100%;
     box-sizing: border-box;
     background: #fff;
+    flex-direction: row-reverse;
 
     & .menubar__toggle {
-        color: var(--primary-color);
+        color: ${colors.secundaryColor};
         float: right;
         line-height: 50px;
         font-size: 24px;
@@ -37,6 +41,7 @@ const StyledNav = styled.nav`
         display: flex;
 
         & .menubar__menu-item {
+            display: flex;
             list-style: none;
             position: relative;
 
@@ -45,20 +50,27 @@ const StyledNav = styled.nav`
                 padding: 1rem;
                 color: #595959;
                 text-decoration: none;
+                text-transform: uppercase;
 
                 &:hover 
                 {
-                    color: var(--text-color-dark);
-                    box-shadow: inset 0 -3px 0 0 var(--primary-color-rgb);
+                    color: ${colors.secundaryColor};
+                    box-shadow: inset 0 -3px 0 0 ${colors.secundaryColor};
                     fill: currentColor;
                 }
 
                 &.active
                 {
-                    color: var(--text-color-dark);
-                    box-shadow: inset 0 -3px 0 0 var(--primary-color-rgb);
+                    color: ${colors.secundaryColor};
+                    box-shadow: inset 0 -3px 0 0 ${colors.secundaryColor};
                     fill: currentColor;
                 }
+            }
+
+            & .menubar__border {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                border-right: 1px solid rgba(0,0,0,.2);
             }
 
             & .menubar__submenu-list {
@@ -124,7 +136,7 @@ const Search = styled.div`
         &:hover{
             opacity: 1;
             cursor: pointer;
-            box-shadow: inset 0 -3px 0 0 var(--primary-color-rgb);
+            box-shadow: inset 0 -3px 0 0 ${colors.primaryColor};
             fill: currentColor;
         }
     }
@@ -141,9 +153,9 @@ const Header = ({items, logo, logo2, search}) => {
      const handleOnClick = (myRef) => {
         const li = myRef.current;
         // Listas hermanas a la seleccionada
-        let siblingsLis = getSiblings(li);
+        let siblingsList = getSiblings(li);
         // Quitamos todas las activas de las hermanos activos
-        siblingsLis.forEach( item => {
+        siblingsList.forEach( item => {
             item.classList.remove('active');
             item.querySelector('a').classList.remove('active');
         });
@@ -180,7 +192,7 @@ const Header = ({items, logo, logo2, search}) => {
      * @returns JSX.IntrinsicElements.li
      */
     const buildListItems = () => {
-        return items.map( item => {
+        return items.map( (item, index) => {
             const myRef = React.createRef();
             if( item.items && item.items.length ) {
                 return <li className='menubar__menu-item menubar__parent-sub-menu-item'
@@ -197,6 +209,7 @@ const Header = ({items, logo, logo2, search}) => {
                     <Link className="menubar__menuitem-link" to={item.routerLink}>
                         {item.label}
                     </Link>
+                    {index + 1 !== items.length && <span className='menubar__border'></span>}
                 </li>
             }
         });

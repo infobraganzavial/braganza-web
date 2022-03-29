@@ -19,120 +19,24 @@ const Layout = (props) => {
      */
      const items = [
                {
-                  label :'Tecnologías',
-                  routerLink: "/tecnologias",
-                  items : [
-                     {
-                        label:'Sistemas de Información Geográfica',
-                        routerLink: "/gis",
-                     },
-                     {
-                        label:'Sistemas de Posicionamiento Global',
-                        routerLink: "/gps",
-                     },
-                     {
-                        label:'GeoAI',
-                        routerLink: "/geoai",
-                     },
-                     {
-                        label:'Optimización',
-                        routerLink: "/optimizacion",
-                     },
-                     {
-                        label:'Teleobservación',
-                        routerLink: "/teleobservacion",
-                     },
-                  ]
-               },
-               {
-                  label:'Productos',
-                  routerLink: "/productos",
-                  items : [
-                     {
-                        label:'Esri',
-                        routerLink: "/esri",
-                     },
-                     {
-                        label:'Maxar',
-                        routerLink: "/maxar",
-                     },
-                     {
-                        label:'Airbus',
-                        routerLink: "/airbus",
-                     },
-                     {
-                        label:'fwLogistic',
-                        routerLink: "/fwLogistic",
-                     },
-                     {
-                        label:'Cartografía del Uruguay',
-                        routerLink: "/cartografia-uruguay",
-                     },
-                  ]
-               },
-               {
-                  label:'Soluciones',
-                  routerLink: "/soluciones",
-                  items : [
-                     {
-                        label:'Agrícola',
-                        routerLink: "/agricola",
-                     },
-                     {
-                        label:'Forestal',
-                        routerLink: "/forestal",
-                     },
-                     {
-                        label:'Energía y Gas',
-                        routerLink: "/energia-gas",
-                     },
-                     {
-                        label:'Gestión Urbana y Catastro',
-                        routerLink: "/gestion-urbana-catastro",
-                     },
-                     {
-                        label:'Bancario',
-                        routerLink: "/bancario",
-                     },
-                     {
-                        label:'Logística y Mercado',
-                        routerLink: "/logistica-mercado",
-                     },
-                     {
-                        label:'Infraestructura y Servicios',
-                        routerLink: "/infraestructura-servicios",
-                     },
-                     {
-                        label:'Gobierno Local',
-                        routerLink: "/Ggobierno-local",
-                     },
-                  ]
+                  label :'Inicio',
+                  routerLink: "/inicio",
                },
                {
                   label:'Servicios',
                   routerLink: "/servicios",
-                  items: [
-                     {
-                        label:'Capacitaciones',
-                        routerLink: "/capacitaciones",
-                     },
-                     {
-                        label:'Consultoría y Desarrollo',
-                        routerLink: "/consultoria-desarrollo",
-                     },
-                     {
-                        label:'Servicio GIS',
-                        routerLink: "/servicio-GIS",
-                     },
-                     {
-                        label:'Procesamiento de Imágenes',
-                        routerLink: "/procesamiento-imagenes",
-                     },
-                  ]
                },
                {
                   label:'Nosotros',
                   routerLink: "/nosotros",
+               },
+               {
+                  label:'Proyectos',
+                  routerLink: "/proyectos",
+               },
+               {
+                  label:'Contacto',
+                  routerLink: "/contacto",
                },
             ];
          /**
