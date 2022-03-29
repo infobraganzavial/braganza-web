@@ -8,6 +8,7 @@ import getSiblings from '../../helpers/getSiblings';
 const StyledHeader = styled.header`
     position: absolute;
     display: flex;
+    justify-content: space-around;
     top: 0;
     left: 0;
     padding: 0 100px;
