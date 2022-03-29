@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 // Modulos propios
 import Landing from '../../pages/landing/Landing';
-// import Header from '../header/Header';
+import Header from '../header/Header';
 // import Footer from '../footer/Footer';
 
 const Layout = (props) => {
@@ -141,58 +141,21 @@ const Layout = (props) => {
           * .svg, si bien podemos poner otra imagen con otra extención esta será la más apropiada.
           **/
          const logo = '/logo512.png';
-         const logo2 = '/assets/esri.svg';
-         const search = '/assets/search-interface-symbol.png';
-         const footer = {
-            brand: '/assets/footer/thescienceofwhere.svg',
-            socialNetworks: [
-               {
-                  name: 'facebook',
-                  url: '#',
-                  logo: '/assets/footer/facebook.png'
-               },
-               {
-                  name: 'instagram',
-                  url: '#',
-                  logo: '/assets/footer/instagram.png'
-               },
-               {
-                  name: 'linkedin',
-                  url: '#',
-                  logo: '/assets/footer/linkedin.png'
-               },
-               {
-                  name: 'twitter',
-                  url: '#',
-                  logo: '/assets/footer/twitter.png'
-               },
-               {
-                  name: 'youtube',
-                  url: '#',
-                  logo: '/assets/footer/youtube.png'
-               },
-               {
-                  name: 'flickr',
-                  url: '#',
-                  logo: '/assets/footer/flickr.png'
-               }
-            ]
-         }
  
     return ( 
         // Creamos nuestro Layout directamente desde App.
+        <>
+         <Header
+                  items = {items}
+                  logo = {logo}
+         />
         <Routes>
-           {/* <Header
-                    items = {items}
-                    logo = {logo}
-                    logo2 = {logo2}
-                    search = {search}
-            /> */}
            <Route exact path="/" element={<Landing />}/>
            {/* <Footer brand={footer.brand}
                    socialNetworks={footer.socialNetworks}
                      /> */}
         </Routes>
+        </>
      );
 }
 
