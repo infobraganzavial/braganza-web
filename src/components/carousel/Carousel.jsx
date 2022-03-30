@@ -64,7 +64,7 @@ const Carousel = () => {
                 autoplay={{ 'delay': 4000, 'disableOnInteraction': false }}
                 modules={[Autoplay, Navigation, Pagination]}
                 onSlideChange={(swiper) => sw = swiper}
-                onSwiper={(swiper) => console.log(swiper)}
+                onSwiper={(swiper) => sw = swiper}
                 onInit={(swiper) => {
                     sw = swiper;
                     swiper.params.navigation.prevEl = prevRef.current;
