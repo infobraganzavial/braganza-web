@@ -9,7 +9,7 @@ import colors from '../../theming/colors';
 import getSiblings from '../../helpers/getSiblings';
 
 const StyledHeader = styled.header`
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: space-around;
     top: 0;
@@ -19,6 +19,7 @@ const StyledHeader = styled.header`
     box-sizing: border-box;
     background: #fff;
     flex-direction: row-reverse;
+    z-index: 20;
 
     & .menubar__toggle {
         color: ${colors.secundaryColor};
@@ -28,6 +29,12 @@ const StyledHeader = styled.header`
         cursor: pointer;
         display: none;
     }
+`
+
+const StyledDiv = styled.div`
+    position: relative;
+    width: 100%;
+    height: 56px;
 `
 
 const StyledNav = styled.nav`
@@ -216,36 +223,39 @@ const Header = ({items, logo, logo2, search}) => {
     }
 
     return (
-        <StyledHeader className='header'>
-            <Brand className='menubar__brand'>
-                <img alt="ica"
-                     src={logo}
-                     height="45"
-                     className="p-mr-2 menubar__logo"/>
-                {logo2 && <>
-                    <span className='menubar__brand-border'></span>
-                    <img alt="esri"
-                        src={logo2}
-                        height="25"
+        <>
+            <StyledHeader className='header'>
+                <Brand className='menubar__brand'>
+                    <img alt="ica"
+                        src={logo}
+                        height="45"
                         className="p-mr-2 menubar__logo"/>
-                </>
-                        }
-            </Brand>
-            <StyledNav className={`menubar ${ active && 'active' }`}>
-                <ul className='menubar__root-list'>
-                    { buildListItems() }
-                </ul>
-            </StyledNav>
-            {search && <Search className='menubar__right'>
-                    <div className="menubar__search">
-                        <img alt="search"
-                             src={search}
-                             height="25"
-                             className="p-mr-2 menubar__search-img"/>
-                    </div>
-            </Search>} 
-            <div className="menubar__toggle"><i className="fa-solid fa-bars" onClick={() => setActive(!active)}></i></div>
-        </StyledHeader>
+                    {logo2 && <>
+                        <span className='menubar__brand-border'></span>
+                        <img alt="esri"
+                            src={logo2}
+                            height="25"
+                            className="p-mr-2 menubar__logo"/>
+                    </>
+                            }
+                </Brand>
+                <StyledNav className={`menubar ${ active && 'active' }`}>
+                    <ul className='menubar__root-list'>
+                        { buildListItems() }
+                    </ul>
+                </StyledNav>
+                {search && <Search className='menubar__right'>
+                        <div className="menubar__search">
+                            <img alt="search"
+                                src={search}
+                                height="25"
+                                className="p-mr-2 menubar__search-img"/>
+                        </div>
+                </Search>} 
+                <div className="menubar__toggle"><i className="fa-solid fa-bars" onClick={() => setActive(!active)}></i></div>
+            </StyledHeader>
+            <StyledDiv></StyledDiv>
+        </>
     );
 }
 

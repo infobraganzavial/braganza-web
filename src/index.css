@@ -1,5 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;1,900&display=swap');
 
+:root{
+  --bgDark: #232427;
+  --bsDark1: rgba(0,0,0,0.2);
+  --bsDark2: rgba(255,255,255,0.1);
+  --bsDark3: rgba(0,0,0,0.3);
+  --bsDarkBox: rgba(0,0,0,0.5);
+  --bsLight1: rgba(0,0,0,0.05);
+  --bsLight2: rgba(255,255,255,0.5);
+  --bgLight: #ebf5fc;
+  --bsLightBox: rgba(0,0,0,0.1);
+  --colorTitleLight: rgba(0,0,0,.05);
+  --colorTitle2Light: rgba(0,0,0,.08);
+
+  /* Paleta de Colores ICA */
+  --primary-color: #ee1b2e;
+  --secundary-color: #008d39;
+  --tertiary-color: #fff;
+  --fourth-color: #dcdbe1;
+
+  --text-error: #bb2124;
+
+  --bgSC: #121212;
+}
+
 body {
   margin: 0;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
