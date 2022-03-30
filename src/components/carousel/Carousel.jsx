@@ -51,8 +51,8 @@ const Carousel = () => {
 
     return (
         <div
-            onMouseEnter={() => sw.autoplay.stop()}
-            onMouseLeave={() => sw.autoplay.start()}
+            onMouseEnter={() => {if(sw) sw.autoplay.stop()}}
+            onMouseLeave={() => {if(sw) sw.autoplay.start()}}
         >
             <Swiper
                 onAutoplayPause={() => console.log('slide autoplay')}
@@ -63,7 +63,7 @@ const Carousel = () => {
                 grabCursor={true}
                 autoplay={{ 'delay': 4000, 'disableOnInteraction': false }}
                 modules={[Autoplay, Navigation, Pagination]}
-                onSlideChange={() => console.log('slide change')}
+                onSlideChange={(swiper) => sw = swiper}
                 onSwiper={(swiper) => console.log(swiper)}
                 onInit={(swiper) => {
                     sw = swiper;
