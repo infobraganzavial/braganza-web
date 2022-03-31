@@ -6,7 +6,8 @@ import colors from '../../theming/colors';
 const OurServicesContainer = styled.section`
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100vh ;
+    min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,20 +22,26 @@ const Service = styled.article`
     display: flex;
     position: relative;
     width: 100%;
-    height: auto;
     min-height: ${({length}) => `${(100 / length)}%`};
-    /* background-color: ${colors.tertiaryCorlor}; */
     margin: 1rem 0;
+`
+
+const FigureContainer = styled.div`
+    position: relative;
+    width: 30%;
+    min-width: 460px;
+    height: inherit;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(73,173,110,1) 50%, rgba(255,255,255,0) 50%);
 `
 
 const FigureWrapper = styled.div`
     position: relative;
     display: flex;
-    width: 30%;
-    height: inherit;
-    /* background: linear-gradient(90deg, rgba(73,173,110,1) 50%, rgba(255,255,255,0) 50%); */
+    width: 100%;
+    height: 100%;
     background-color: ${colors.tertiaryCorlor}; 
-    clip-path: circle(100% at 0% 50%);
+    clip-path: circle(43% at 50% 50%);
 `
 
 const Figure = styled.figure`
@@ -52,8 +59,6 @@ const Figure = styled.figure`
     background-position: center;
     background-size: cover;
     clip-path: circle(50% at 50% 50%);
-    /* clip-path: circle(70% at 0% 50%); */
-    /* outline: 31px solid ${ colors.tertiaryCorlor }; */
 `
 
 const Info = styled.div`
@@ -64,27 +69,37 @@ const Info = styled.div`
     width: 70%;
     padding: 2rem;
     background-color: ${colors.tertiaryCorlor};
+    
+    & h2, p {
+        text-transform: uppercase;
+    }
 `
 
 const OurServices = ({ourServices}) => {
 
     const buildServices = () =>{
         return ourServices.services.map( s => {
-            return <Service key={s.id} length={ourServices.services.length}>
-                <Info>
+            return <Service 
+                            className='our-services__service'
+                            key={s.id} 
+                            length={ourServices.services.length}>
+                <Info className='our-services__info'>
                     <h2>{s.title}</h2>
                     <p>{s.shortDescription}</p>
                 </Info>
-                <FigureWrapper>
-                    <Figure backgroundImage={s.images[0].url}>
-                    </Figure>
-                </FigureWrapper>
+                <FigureContainer className='our-services__figure-container'>
+                    <FigureWrapper>
+                        <Figure backgroundImage={s.images[0].url}>
+                        </Figure>
+                    </FigureWrapper>
+                </FigureContainer>
             </Service>
         }) 
     }
 
     return (
-        <OurServicesContainer style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${ourServices.imageBg.url})`}}>
+        <OurServicesContainer   className='our-services'
+                                style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${ourServices.imageBg.url})`}}>
             { buildServices() }
         </OurServicesContainer>
         )
