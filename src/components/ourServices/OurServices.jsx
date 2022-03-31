@@ -32,7 +32,9 @@ const FigureWrapper = styled.div`
     display: flex;
     width: 30%;
     height: inherit;
-    background: linear-gradient(90deg, rgba(73,173,110,1) 50%, rgba(255,255,255,0) 50%);
+    /* background: linear-gradient(90deg, rgba(73,173,110,1) 50%, rgba(255,255,255,0) 50%); */
+    background-color: ${colors.tertiaryCorlor}; 
+    clip-path: circle(100% at 0% 50%);
 `
 
 const Figure = styled.figure`
@@ -44,13 +46,14 @@ const Figure = styled.figure`
     height: auto;
     min-height: 300px;
     max-height: 300px;
-    border-radius: 50%;
     overflow: hidden;
     background-image: ${({backgroundImage}) => `url(${backgroundImage})` };
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    outline: 31px solid ${ colors.tertiaryCorlor };
+    clip-path: circle(50% at 50% 50%);
+    /* clip-path: circle(70% at 0% 50%); */
+    /* outline: 31px solid ${ colors.tertiaryCorlor }; */
 `
 
 const Info = styled.div`
