@@ -2,6 +2,7 @@ import React from 'react';
 
 // Components
 import Carousel from '../../components/carousel/Carousel';
+import ContactUs from '../../components/contactUs/ContactUs';
 import OurServices from '../../components/ourServices/OurServices';
 
 const Landing = () => {
@@ -42,6 +43,7 @@ const Landing = () => {
         <>
             <Carousel/>
             <OurServices ourServices={ourServices}/>
+            <ContactUs/>
         </>
     );
 }

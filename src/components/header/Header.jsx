@@ -18,7 +18,7 @@ const StyledHeader = styled.header`
     width: 100%;
     box-sizing: border-box;
     background: #fff;
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
     z-index: 20;
 
     & .menubar__toggle {
@@ -34,7 +34,7 @@ const StyledHeader = styled.header`
 const StyledDiv = styled.div`
     position: relative;
     width: 100%;
-    height: 56px;
+    height: 62.66px;
 `
 
 const StyledNav = styled.nav`
@@ -124,7 +124,9 @@ const Brand = styled.div`
     }
 
     & .menubar__logo {
-        opacity: .7;
+        /* opacity: .7; */
+        width: 180px;
+        height: auto;
     }
 
     & .menubar__logo:hover {
@@ -228,7 +230,6 @@ const Header = ({items, logo, logo2, search}) => {
                 <Brand className='menubar__brand'>
                     <img alt="ica"
                         src={logo}
-                        height="45"
                         className="p-mr-2 menubar__logo"/>
                     {logo2 && <>
                         <span className='menubar__brand-border'></span>

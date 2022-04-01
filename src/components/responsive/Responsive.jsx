@@ -21,7 +21,7 @@ const Responsive = styled.div`
             width: 100%;
             height: calc(100vh - 50px);
             background: #fff;
-            top: 50px;
+            top: 62.66px;
             left: -100%;
             transition: 0.5s;
             z-index: 9999;
