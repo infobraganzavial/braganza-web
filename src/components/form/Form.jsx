@@ -30,7 +30,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                 return <label key={field.name} 
                               className="form__label"
                               htmlFor={field.name}>
-                            <span className="form__name-input">{field.label}</span>
+                            { field.label && <span className="form__name-input">{field.label}</span>}
                             <input id={field.name}
                                     className="form__input" 
                                     type="text" 
@@ -38,6 +38,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                                     minLength={field.minLength}
                                     onChange={(e)=> {console.log(e)}}
                                     disabled={field.disabled}
+                                    placeholder={field.placeholder}
                                     {...register(field.name, {
                                         required : field.required,
                                         validate : (value) => {
@@ -56,7 +57,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                 return <label key={field.name} 
                               className="form__label"
                               htmlFor={field.name}>
-                            <span className="form__name-input">{field.label}</span>
+                            { field.label && <span className="form__name-input">{field.label}</span>}
                             <textarea id={field.name}
                                     className="form__input" 
                                     maxLength={field.maxLength}
@@ -65,6 +66,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                                     rows={field.rows}
                                     onChange={(e)=> {console.log(e)}}
                                     disabled={field.disabled}
+                                    placeholder={field.placeholder}
                                     {...register(field.name, {
                                         required : field.required,
                                         validate : (value) => {
@@ -83,7 +85,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                 return <label key={field.name} 
                              className="form__label"
                              htmlFor={field.name}>
-                            <span className="form__name-input">{field.label}</span>
+                            { field.label && <span className="form__name-input">{field.label}</span>}
                             <input 
                                     id={field.name}
                                     className="form__input" 
@@ -92,6 +94,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                                     max={field.max}
                                     onChange={field.handleChange}
                                     disabled={field.disabled}
+                                    placeholder={field.placeholder}
                                     {...register(field.name, {
                                         required : field.required,
                                         validate : (value) => {
@@ -110,7 +113,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                 return <label key={field.name} 
                         className="form__label"
                         htmlFor={field.name}>
-                    <span className="form__name-input">{field.label}</span>
+                    { field.label && <span className="form__name-input">{field.label}</span>}
                     <input  id={field.name}
                             className="form__input" 
                             type="date" 
@@ -118,6 +121,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                             max={field.max}
                             onChange={field.handleChange}
                             disabled={field.disabled}
+                            placeholder={field.placeholder}
                             {...register(field.name, {
                                 required : field.required,
                                 validate : (value) => {
@@ -136,7 +140,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                 return <label key={field.name} 
                         className="form__label"
                         htmlFor={field.name}>
-                    <span className="form__name-input">{field.label}</span>
+                    { field.label && <span className="form__name-input">{field.label}</span>}
                     <input  id={field.name}
                             className="form__input" 
                             type="month" 
@@ -144,6 +148,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                             max={field.max}
                             onChange={field.handleChange}
                             disabled={field.disabled}
+                            placeholder={field.placeholder}
                             {...register(field.name, {
                                 required : field.required,
                                 validate : (value) => {
@@ -162,13 +167,14 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                 return <label key={field.name}
                         className="form__label"
                         htmlFor={field.name}>
-                    <span className="form__name-input">{field.label}</span>
+                    { field.label && <span className="form__name-input">{field.label}</span>}
                     <input id={field.name}
                             className="form__input" 
                             type="email"
                             pattern={field.pattern}
                             onChange={field.handleChange}
                             disabled={field.disabled}
+                            placeholder={field.placeholder}
                             {...register(field.name, {
                                 required : field.required,
                                 validate : (value) => {
@@ -185,7 +191,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
             },
             'select': function isSelect() {
                 return <div key={field.name} className="form__label">
-                    <span className="form__name-input">{field.label}</span>
+                    { field.label && <span className="form__name-input">{field.label}</span>}
                     <select id={field.name}
                         className="form__input form__select" 
                         onChange={field.handleChange}
@@ -206,7 +212,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                 return <label key={field.name} 
                         className="form__label"
                         htmlFor={field.name}>
-                    <span className="form__name-input">{field.label}</span>
+                    { field.label && <span className="form__name-input">{field.label}</span>}
                     <span className="form_view-password">
                         <input id={field.name}
                                 className="form__input" 

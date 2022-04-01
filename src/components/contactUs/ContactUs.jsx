@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from 'styled-components';
 
 // Presentational Component
 import Form from "../../components/form/Form";
@@ -8,9 +9,35 @@ import Loader from "../../components/loader/Loader";
 // Services
 // import { ContactUsService } from "../../services/api/CountryService";
 
+const FormContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-27deg, var(--secundary-color) 50%, var(--primary-color) 50%);
+    background-attachment: fixed;
+    padding-bottom: 1rem;
+`
+
+const FormCard = styled.div`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    min-width: 380px;
+    max-width: 590px;
+    height: auto;
+    /* min-height: 650px; */
+    background: rgba(255,255,255,0.6);
+    border-radius: .5rem;
+    border: 1px solid #cecdcd;
+    box-shadow: 0 5px 35px rgba(0,0,0,.2);
+    padding: 0 0 1rem 0;
+`
+
 const ContactUs = () => {
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     // const showToast = useRef(null);
     // let timer;
@@ -56,7 +83,7 @@ const ContactUs = () => {
         {
             type: 'text',
             name: 'name',
-            label: 'Nombre:',
+            placeholder: 'Nombre:',
             maxLength: 45,
             minLength: 0,
             handleChange,
@@ -65,7 +92,7 @@ const ContactUs = () => {
         {
             type: 'text',
             name: 'email',
-            label: 'Correo electrónico:',
+            placeholder: 'Correo electrónico:',
             maxLength: 45,
             minLength: 0,
             handleChange,
@@ -74,7 +101,7 @@ const ContactUs = () => {
         {
             type: 'text',
             name: 'subject',
-            label: 'Asunto:',
+            placeholder: 'Asunto:',
             maxLength: 45,
             minLength: 0,
             handleChange,
@@ -83,7 +110,7 @@ const ContactUs = () => {
         {
             type: 'textarea',
             name: 'message',
-            label: 'Mensaje:',
+            placeholder: 'Mensaje:',
             maxLength: 45,
             minLength: 0,
             handleChange,
@@ -107,21 +134,21 @@ const ContactUs = () => {
     );
 
     return (
-        <div className="form__container--contactUs">
-            <div className="form__card--contactUs">
+        <FormContainer className="form__container--contactUs">
+            <FormCard className="form__card--contactUs">
                 <Form 
                     defaultValues={defaultValues}
                     defaultValuesError={defaultValuesError}
                     fields={fields}
                     handleSubmitForm={handleSubmit} 
-                    title='Registro' 
+                    title='Contacto' 
                 />
                 {/* <Dialog 
                         position='bottom-left'
                         showToast={showToast}
                         /> */}
-            </div>
-        </div>
+            </FormCard>
+        </FormContainer>
     );
 }
 
