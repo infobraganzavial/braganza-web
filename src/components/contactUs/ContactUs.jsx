@@ -6,6 +6,9 @@ import Form from "../../components/form/Form";
 // import Dialog from "../../components/dialog/Dialog";
 import Loader from "../../components/loader/Loader";
 
+// Theming
+import colors from '../../theming/colors.js';
+
 // Services
 // import { ContactUsService } from "../../services/api/CountryService";
 
@@ -14,7 +17,7 @@ const FormContainer = styled.div`
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(-27deg, var(--secundary-color) 50%, var(--primary-color) 50%);
+    background: linear-gradient(-27deg, ${colors.secundaryColorRgba} 50%, ${colors.primaryColorRgba} 50%);
     background-attachment: fixed;
     padding-bottom: 1rem;
 `
@@ -83,16 +86,16 @@ const ContactUs = () => {
         {
             type: 'text',
             name: 'name',
-            placeholder: 'Nombre:',
+            placeholder: 'Nombre',
             maxLength: 45,
             minLength: 0,
             handleChange,
-            required: 'El nombre de Nomnbre es requerido.'
+            required: 'El Nombre es requerido.'
         },
         {
             type: 'text',
             name: 'email',
-            placeholder: 'Correo electrónico:',
+            placeholder: 'Correo electrónico',
             maxLength: 45,
             minLength: 0,
             handleChange,
@@ -101,7 +104,7 @@ const ContactUs = () => {
         {
             type: 'text',
             name: 'subject',
-            placeholder: 'Asunto:',
+            placeholder: 'Asunto',
             maxLength: 45,
             minLength: 0,
             handleChange,
@@ -110,7 +113,7 @@ const ContactUs = () => {
         {
             type: 'textarea',
             name: 'message',
-            placeholder: 'Mensaje:',
+            placeholder: 'Mensaje',
             maxLength: 45,
             minLength: 0,
             handleChange,
