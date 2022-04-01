@@ -31,7 +31,7 @@ const FormCard = styled.div`
     max-width: 590px;
     height: auto;
     /* min-height: 650px; */
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.8);
     border-radius: .5rem;
     border: 1px solid #cecdcd;
     box-shadow: 0 5px 35px rgba(0,0,0,.2);
