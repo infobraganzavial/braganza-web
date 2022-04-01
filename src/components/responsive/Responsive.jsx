@@ -77,7 +77,7 @@ const Responsive = styled.div`
             min-width: 360px;
             background-color: #49ad6e;
             clip-path: circle(100% at 50% 50%);
-            padding-top: 2rem;
+            padding-top: 1rem;
             border-radius: 17rem 17rem 0 0;
         }
 
@@ -87,6 +87,9 @@ const Responsive = styled.div`
 
         .our-services__figure {
             margin: auto;
+            margin: auto;
+            width: 100%;
+            min-width: max-content;
         }
 
         .our-services__info {
@@ -103,7 +106,38 @@ const Responsive = styled.div`
         }
 
         /* Our Services begins here! */
+
+        /* Contact Us begins here! */
+        .form__card--contactUs {
+            min-width: max-content;
+        }
+
+        /* Contact Us ends here! */ 
     `}
+
+    ${device.mobile`
+
+        /* Our Services begins here! */
+        .our-services__figure-container {
+            min-width: min-content;
+        }
+
+        .our-services__figure {
+            
+        }
+
+        /* Our services ends here!! */
+
+        /* Contact Us begins here! */
+        .form__card--contactUs {
+            width: 100%;
+        }
+
+        .form__input {
+            min-width: 100%;
+        }
+        /* Contact Us ends here! */ 
+        `}
 
     ${device.laptop`
     /* Hearder ends here! */
