@@ -67,18 +67,30 @@ const Responsive = styled.div`
         .our-services__service {
             flex-direction: column-reverse;
             min-height: 100%;
+            justify-content: center;
+            align-items: center;
         }
 
         .our-services__figure-container {
             width: 100%;
+            max-width: 360px;
+            min-width: 360px;
             background-color: #49ad6e;
             clip-path: circle(100% at 50% 50%);
             padding-top: 2rem;
             border-radius: 17rem 17rem 0 0;
-            min-width: 100%;
+        }
+
+        .our-services__figure-container div {
+            max-width: 360px;
+        }
+
+        .our-services__figure {
+            margin: auto;
         }
 
         .our-services__info {
+            max-width: 360px;
             width: 100%;
         }
 

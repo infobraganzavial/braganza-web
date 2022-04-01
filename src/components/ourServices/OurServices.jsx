@@ -6,7 +6,7 @@ import colors from '../../theming/colors';
 const OurServicesContainer = styled.section`
     position: relative;
     width: 100%;
-    height: 100vh ;
+    height: 100%;
     min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,7 +22,9 @@ const Service = styled.article`
     display: flex;
     position: relative;
     width: 100%;
-    min-height: ${({length}) => `${(100 / length)}%`};
+    height: auto;
+    /* min-height: ${({length}) => `${(100 / length)}%`}; */
+    min-height: 360px;
     margin: 1rem 0;
 `
 
@@ -41,11 +43,12 @@ const FigureWrapper = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${colors.tertiaryCorlor}; 
-    clip-path: circle(43% at 50% 50%);
+    clip-path: circle(44% at 50% 50%);
 `
 
 const Figure = styled.figure`
     margin: auto;
+    margin-right: 70px;
     padding: 0;
     width: 30%;
     max-width: 300px;
@@ -89,7 +92,8 @@ const OurServices = ({ourServices}) => {
                 </Info>
                 <FigureContainer className='our-services__figure-container'>
                     <FigureWrapper>
-                        <Figure backgroundImage={s.images[0].url}>
+                        <Figure className='our-services__figure'
+                                backgroundImage={s.images[0].url}>
                         </Figure>
                     </FigureWrapper>
                 </FigureContainer>
