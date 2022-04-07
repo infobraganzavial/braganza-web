@@ -60,7 +60,7 @@ const Carousel = () => {
                 style={{ '--swiper-navigation-color': '#fff','--swiper-pagination-color': '#fff'}}
                 loop={true}
                 speed={4000}
-                grabCursor={true}
+                grabCursor={false}
                 autoplay={{ 'delay': 4000, 'disableOnInteraction': false }}
                 modules={[Autoplay, Navigation, Pagination]}
                 onSlideChange={(swiper) => sw = swiper}
