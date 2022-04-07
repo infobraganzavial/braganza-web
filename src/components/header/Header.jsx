@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
     position: fixed;
     display: flex;
     justify-content: space-around;
-    top: 0;
+    top: 40px;
     left: 0;
     padding: 0 100px;
     width: 100%;

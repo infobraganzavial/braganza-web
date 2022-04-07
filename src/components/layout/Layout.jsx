@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 // Modulos propios
 import Landing from '../../pages/landing/Landing';
 import Header from '../header/Header';
+import ContactBar from '../contactBar/contactBar';
 // import Footer from '../footer/Footer';
 
 const Layout = (props) => {
@@ -49,6 +50,7 @@ const Layout = (props) => {
     return ( 
         // Creamos nuestro Layout directamente desde App.
         <>
+         <ContactBar/>
          <Header
                   items = {items}
                   logo = {logo}

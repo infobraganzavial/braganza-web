@@ -113,6 +113,16 @@ const Responsive = styled.div`
         }
 
         /* Contact Us ends here! */ 
+
+        /* Our projects begins here!*/
+
+        .our-projects__containner{
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* Our project ends here! */
     `}
 
     ${device.mobile`
@@ -127,6 +137,8 @@ const Responsive = styled.div`
         }
 
         /* Our services ends here!! */
+
+        
 
         /* Contact Us begins here! */
         .form__card--contactUs {
