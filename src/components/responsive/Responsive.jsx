@@ -113,16 +113,28 @@ const Responsive = styled.div`
         }
 
         /* Contact Us ends here! */ 
+        
+        /* Contact bar begins here! */
+        
+        .contact-bar__containner {
+            padding: 15px;
 
-        /* Our projects begins here!*/
+            & span {
+                display: none;
+            }
+        }
 
-        .our-projects__containner{
+        /* Contact bar ends here! */ 
+
+        /* About us begins here!*/
+        
+        .about-us__containner{
             align-items: center;
             justify-content: center;
             padding: 1rem;
         }
 
-        /* Our project ends here! */
+        /* About us ends here! */
     `}
 
     ${device.mobile`

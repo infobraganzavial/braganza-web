@@ -4,7 +4,7 @@ import React from 'react';
 import Carousel from '../../components/carousel/Carousel';
 import ContactUs from '../../components/contactUs/ContactUs';
 import OurServices from '../../components/ourServices/OurServices';
-import OurProjects from '../../components/ourProjects/OurProjects';
+import AboutUs from '../../components/aboutUs/AboutUs';
 
 const Landing = () => {
 
@@ -40,7 +40,7 @@ const Landing = () => {
 
     } 
 
-    const ourProjects ={
+    const aboutUs ={
         imageBg : {
             id: 1,
             url: 'https://img.freepik.com/foto-gratis/excavadora-cavando-suelo-luz-dia_23-2149194775.jpg?w=1380&t=st=1649293241~exp=1649293841~hmac=4df9ede8c630510cefea3a604da39c65231b12859e4cec364840d2cedf44c5a2'
@@ -71,7 +71,7 @@ const Landing = () => {
         <>
             <Carousel/>
             <OurServices ourServices={ourServices}/>
-            <OurProjects ourProjects={ourProjects}/>
+            <AboutUs aboutUs={aboutUs}/>
             <ContactUs/>
         </>
     );

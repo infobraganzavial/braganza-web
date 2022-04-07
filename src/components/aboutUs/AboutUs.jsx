@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // Theming
 import colors from '../../theming/colors';
 
-const OurProjectsContainer = styled.section`
+const AboutUsContainer = styled.section`
     position: relative;
     width: 100%;
     height: 100%;
@@ -56,17 +56,17 @@ const Info = styled.section`
    
 `
 
-const OurProjects = ({ourProjects}) => {
+const AboutUs = ({aboutUs}) => {
 
     const buildServices = () =>{
         return (
             <Service >
                 {
-                    ourProjects.content.map( s => {
+                    aboutUs.content.map( s => {
                         return (
                             <Info 
                                   key={s.id} 
-                                  length={ourProjects.content.length}>
+                                  length={aboutUs.content.length}>
                                 <h2>{s.title}</h2>
                                 <p>{s.description}</p>
                             </Info>
@@ -80,11 +80,11 @@ const OurProjects = ({ourProjects}) => {
     }
 
     return (
-        <OurProjectsContainer   className='our-projects__containner'
-                                style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${ourProjects.imageBg.url})`}}>
+        <AboutUsContainer   className='about-us__containner'
+                                style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${aboutUs.imageBg.url})`}}>
             { buildServices() }
-        </OurProjectsContainer>
+        </AboutUsContainer>
         )
 }
 
-export default OurProjects;
+export default AboutUs;

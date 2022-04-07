@@ -70,7 +70,7 @@ const ContactBar = () => {
     );
 
     return (
-        <ContactBarContainer>
+        <ContactBarContainer className="contact-bar__containner">
             <ContactBarSection1>
                 <ContactBarGroup>
                     <ContactBarIcon>c</ContactBarIcon>
