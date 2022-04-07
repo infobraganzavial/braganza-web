@@ -13,24 +13,32 @@ import colors from '../../theming/colors.js';
 // import { ContactUsService } from "../../services/api/CountryService";
 
 const FormContainer = styled.div`
+    min-height: 100vh;
+    /* background: linear-gradient(-27deg, ${colors.secundaryColorRgba} 50%, ${colors.primaryColorRgba} 50%); */
+    background-image: url('/assets/contactus/firm-handshake.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+`
+
+const FormWrapper = styled.div`
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(-27deg, ${colors.secundaryColorRgba} 50%, ${colors.primaryColorRgba} 50%);
-    background-attachment: fixed;
+    backdrop-filter: grayscale(100%);
     padding-bottom: 1rem;
 `
 
 const FormCard = styled.div`
-    position: relative;
     display: flex;
     justify-content: center;
     width: 40%;
     min-width: 380px;
     max-width: 590px;
     height: auto;
-    /* min-height: 650px; */
     background: rgba(255,255,255,0.8);
     border-radius: .5rem;
     border: 1px solid #cecdcd;
@@ -138,19 +146,21 @@ const ContactUs = () => {
 
     return (
         <FormContainer className="form__container--contactUs">
-            <FormCard className="form__card--contactUs">
-                <Form 
-                    defaultValues={defaultValues}
-                    defaultValuesError={defaultValuesError}
-                    fields={fields}
-                    handleSubmitForm={handleSubmit} 
-                    title='Contacto' 
-                />
-                {/* <Dialog 
-                        position='bottom-left'
-                        showToast={showToast}
-                        /> */}
-            </FormCard>
+            <FormWrapper>
+                <FormCard className="form__card--contactUs">
+                    <Form 
+                        defaultValues={defaultValues}
+                        defaultValuesError={defaultValuesError}
+                        fields={fields}
+                        handleSubmitForm={handleSubmit} 
+                        title='Contacto' 
+                    />
+                    {/* <Dialog 
+                            position='bottom-left'
+                            showToast={showToast}
+                            /> */}
+                </FormCard>
+            </FormWrapper>
         </FormContainer>
     );
 }
