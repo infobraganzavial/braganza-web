@@ -58,6 +58,14 @@ const Responsive = styled.div`
             display: block !important;
         }
 
+        .menubar__logo {
+            display: none;
+        }
+
+        .menubar__logo-mobile {
+            display: block;
+        }
+
         /* Hearder ends here! */
 
         /* Our Services begins here! */

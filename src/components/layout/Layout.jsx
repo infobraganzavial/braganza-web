@@ -45,6 +45,7 @@ const Layout = (props) => {
           * .svg, si bien podemos poner otra imagen con otra extención esta será la más apropiada.
           **/
          const logo = '/logo512.png';
+         const logoMobile = '/logo192.png';
  
     return ( 
         // Creamos nuestro Layout directamente desde App.
@@ -52,6 +53,7 @@ const Layout = (props) => {
          <Header
                   items = {items}
                   logo = {logo}
+                  logoMobile = {logoMobile}
          />
         <Routes>
            <Route exact path="/" element={<Landing />}/>

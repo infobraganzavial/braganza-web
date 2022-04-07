@@ -133,6 +133,12 @@ const Brand = styled.div`
         opacity: 1;
         cursor: pointer;
     }
+
+    & .menubar__logo-mobile {
+        width: 63px;
+        height: auto;
+        display: none;
+    }
 `
 
 const Search = styled.div`
@@ -151,7 +157,7 @@ const Search = styled.div`
     }
 `
 
-const Header = ({items, logo, logo2, search}) => {
+const Header = ({items, logo, logo2, logoMobile, search}) => {
 
     const [active, setActive] = useState(false);
 
@@ -228,12 +234,15 @@ const Header = ({items, logo, logo2, search}) => {
         <>
             <StyledHeader className='header'>
                 <Brand className='menubar__brand'>
-                    <img alt="ica"
+                    <img alt="braganza"
                         src={logo}
                         className="p-mr-2 menubar__logo"/>
+                    {logoMobile && <img alt="braganza"
+                        src={logoMobile}
+                        className="p-mr-2 menubar__logo-mobile"/>}
                     {logo2 && <>
                         <span className='menubar__brand-border'></span>
-                        <img alt="esri"
+                        <img alt="braganza"
                             src={logo2}
                             height="25"
                             className="p-mr-2 menubar__logo"/>
