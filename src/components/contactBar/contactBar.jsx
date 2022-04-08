@@ -1,9 +1,9 @@
-import { useState } from "react";
+// import { useState } from "react";
 import styled from 'styled-components';
 
 // Presentational Component
 
-import Loader from "../../components/loader/Loader";
+// import Loader from "../../components/loader/Loader";
 
 // Theming
 import colors from '../../theming/colors.js';
@@ -52,22 +52,22 @@ const ContactBarGroup = styled.div`
     display: flex;
     width: fit-content;
     margin-right: 10px;
-    align-item: center;
+    align-items: center;
 `
 
 const ContactBar = () => {
 
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
 
-    if(loading) return (
-        <>
-        <Loader />
-        {/* <Dialog 
-                position='bottom-left'
-                showToast={showToast}
-                /> */}
-        </>
-    );
+    // if(loading) return (
+    //     <>
+    //     {/* <Loader /> */}
+    //     {/* <Dialog 
+    //             position='bottom-left'
+    //             showToast={showToast}
+    //             /> */}
+    //     </>
+    // );
 
     return (
         <ContactBarContainer className="contact-bar__containner">
