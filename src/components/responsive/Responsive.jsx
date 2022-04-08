@@ -21,10 +21,12 @@ const Responsive = styled.div`
             width: 100%;
             height: calc(100vh - 50px);
             background: #fff;
-            top: 62.66px;
-            left: -100%;
+            top: -100vh;
+            /*top: 62.66px;*/
+            /*left: -100%;*/
+            left: 0;
             transition: 0.5s;
-            z-index: 9999;
+            z-index: -1;
             align-items: flex-start;
         }
 
@@ -32,8 +34,9 @@ const Responsive = styled.div`
             display: none;
         }
 
-        .active {
-            left:0;
+        .header .active {
+            top: 62.66px;
+            /*left:0;*/
         }
 
         .menubar__root-list {
@@ -42,7 +45,7 @@ const Responsive = styled.div`
             width: 100%;
         }
 
-        .menubar__menu-item.active .menubar__submenu-list {
+        .menubar__menu-item.active-item .menubar__submenu-list {
             position: relative;
             background: var(--bgLight);
 
@@ -53,6 +56,14 @@ const Responsive = styled.div`
 
         .menubar__menu-item {
             display: block !important;
+        }
+
+        .menubar__logo {
+            display: none;
+        }
+
+        .menubar__logo-mobile {
+            display: block;
         }
 
         /* Hearder ends here! */

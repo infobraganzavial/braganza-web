@@ -43,7 +43,7 @@ const FigureWrapper = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${colors.tertiaryCorlor}; 
-    clip-path: circle(44% at 50% 50%);
+    clip-path: circle(47% at 50% 50%);
 `
 
 const Figure = styled.figure`
@@ -67,7 +67,7 @@ const Figure = styled.figure`
 const Info = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     color: ${colors.lightColor};
     width: 70%;
     padding: 2rem;
