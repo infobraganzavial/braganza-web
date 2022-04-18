@@ -30,8 +30,8 @@ const Service = styled.article`
 
 const FigureContainer = styled.div`
     position: relative;
-    width: 30%;
-    min-width: 460px;
+    width: 345px;
+    min-width: 345px;
     height: inherit;
     overflow: hidden;
     background: linear-gradient(90deg, rgba(73,173,110,1) 50%, rgba(255,255,255,0) 50%);
@@ -43,12 +43,12 @@ const FigureWrapper = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${colors.tertiaryCorlor}; 
-    clip-path: circle(47% at 50% 50%);
+    border-radius: 0 50% 50% 0;
 `
 
 const Figure = styled.figure`
     margin: auto;
-    margin-right: 70px;
+    margin-right: 29px;
     padding: 0;
     width: 30%;
     max-width: 300px;
