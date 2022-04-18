@@ -70,12 +70,12 @@
   color: var(--primary-color);
 }
 .swiper-button-next-custom {
-  right: 25px;
+  right: 45px;
   left: auto;
 }
 .swiper-button-prev-custom {
   right: auto;
-  left: 25px;
+  left: 15px;
 }
 
 .swiper-arrow-size {
@@ -91,13 +91,14 @@
   opacity: 0;
   transition: all 0.8s;
   width: 60px;
-  height: 60px;
+  height: 100vh;
   left: -16px;
-  top: -8px;
-  border-radius: 50%;
+  /* top: -8px; */
+  /* border-radius: 50%; */
 }
 
-.button-arrow-custom:active:after {
+.button-arrow-custom:active:after,
+.button-arrow-custom:hover:after {
   padding: 0;
   margin: 0;
   opacity: 1;

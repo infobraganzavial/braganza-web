@@ -66,7 +66,7 @@ const StyledNav = styled.nav`
                     fill: currentColor;
                 }
 
-                &.active
+                &.active-item
                 {
                     color: ${colors.secundaryColor};
                     box-shadow: inset 0 -3px 0 0 ${colors.secundaryColor};
@@ -110,7 +110,7 @@ const StyledNav = styled.nav`
             right: 0px;
         }
 
-        & .active.menubar__parent-sub-menu-item::before {
+        & .active-item.menubar__parent-sub-menu-item::before {
             content: '\f106';
         }
     }
@@ -133,6 +133,12 @@ const Brand = styled.div`
         opacity: 1;
         cursor: pointer;
     }
+
+    & .menubar__logo-mobile {
+        width: 63px;
+        height: auto;
+        display: none;
+    }
 `
 
 const Search = styled.div`
@@ -151,7 +157,7 @@ const Search = styled.div`
     }
 `
 
-const Header = ({items, logo, logo2, search}) => {
+const Header = ({items, logo, logo2, logoMobile, search}) => {
 
     const [active, setActive] = useState(false);
 
@@ -165,13 +171,13 @@ const Header = ({items, logo, logo2, search}) => {
         let siblingsList = getSiblings(li);
         // Quitamos todas las activas de las hermanos activos
         siblingsList.forEach( item => {
-            item.classList.remove('active');
-            item.querySelector('a').classList.remove('active');
+            item.classList.remove('active-item');
+            item.querySelector('a').classList.remove('active-item');
         });
         // toggle al current li
-        li.classList.toggle('active');
+        li.classList.toggle('active-item');
         // toggle al current a
-        li.querySelector('a').classList.toggle('active');
+        li.querySelector('a').classList.toggle('active-item');
     }
 
     /**
@@ -228,12 +234,15 @@ const Header = ({items, logo, logo2, search}) => {
         <>
             <StyledHeader className='header'>
                 <Brand className='menubar__brand'>
-                    <img alt="ica"
+                    <img alt="braganza"
                         src={logo}
                         className="p-mr-2 menubar__logo"/>
+                    {logoMobile && <img alt="braganza"
+                        src={logoMobile}
+                        className="p-mr-2 menubar__logo-mobile"/>}
                     {logo2 && <>
                         <span className='menubar__brand-border'></span>
-                        <img alt="esri"
+                        <img alt="braganza"
                             src={logo2}
                             height="25"
                             className="p-mr-2 menubar__logo"/>
