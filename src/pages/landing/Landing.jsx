@@ -99,7 +99,7 @@ const Landing = () => {
 				alliedCompany: 'company 1'
 			},
 			{
-				id: 2,
+				id: 3,
 				title: 'Proyecto 3',
 				service: 'Lorem ipsum dolor sit amet consectetur',
 				images : [

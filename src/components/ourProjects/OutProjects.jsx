@@ -96,7 +96,8 @@ const Content = styled.section`
 const OurProjects = ({ourProjects}) => {
 
     return (
-        <Container style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${ourProjects.imageBg.url})`}}>
+        <Container  id='proyectos'
+                    style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${ourProjects.imageBg.url})`}}>
             {ourProjects.content.map( s => {
                 return (
                     <Hexagon key={s.id}>
