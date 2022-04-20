@@ -59,7 +59,7 @@ const Landing = () => {
 				
 			},
 			{
-				id: 2,
+				id: 3,
 				title: 'Vision',
 				description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis est eum laborum quae cum ratione enim adipisci, tempore possimus officiis at quasi repudiandae, tempora laudantium sequi dolores quis similique vero?',
 				
@@ -118,8 +118,8 @@ const Landing = () => {
 		<>
 			<Carousel/>
 			<OurServices ourServices={ourServices}/>
-			<OurProjects ourProjects={ourProjects}/>
 			<AboutUs aboutUs={aboutUs}/>
+			<OurProjects ourProjects={ourProjects}/>
 			<ContactUs/>
 		</>
 	);
