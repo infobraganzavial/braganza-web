@@ -80,8 +80,9 @@ const AboutUs = ({aboutUs}) => {
     }
 
     return (
-        <AboutUsContainer   className='about-us__containner'
-                                style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${aboutUs.imageBg.url})`}}>
+        <AboutUsContainer   id='proyectos'
+                            className='about-us__containner'
+                            style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${aboutUs.imageBg.url})`}}>
             { buildServices() }
         </AboutUsContainer>
         )

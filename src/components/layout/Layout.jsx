@@ -21,23 +21,23 @@ const Layout = (props) => {
      const items = [
                {
                   label :'Inicio',
-                  routerLink: "/",
+                  routerLink: "/#inicio",
                },
                {
                   label:'Servicios',
-                  routerLink: "/servicios",
+                  routerLink: "/#nuestros-servicios",
                },
                {
                   label:'Nosotros',
-                  routerLink: "/nosotros",
+                  routerLink: "/#sobre-nosotros",
                },
                {
                   label:'Proyectos',
-                  routerLink: "/proyectos",
+                  routerLink: "/#proyectos",
                },
                {
                   label:'Contacto',
-                  routerLink: "/contacto",
+                  routerLink: "/#contacto",
                },
             ];
          /**
@@ -56,6 +56,7 @@ const Layout = (props) => {
                   items = {items}
                   logo = {logo}
                   logoMobile = {logoMobile}
+                  hashLink
          />
         <Routes>
            <Route exact path="/" element={<Landing />}/>

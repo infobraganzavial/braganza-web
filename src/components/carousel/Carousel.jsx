@@ -51,6 +51,7 @@ const Carousel = () => {
 
     return (
         <div
+            id='inicio'
             onMouseEnter={() => {if(sw) sw.autoplay.stop()}}
             onMouseLeave={() => {if(sw) sw.autoplay.start()}}
         >

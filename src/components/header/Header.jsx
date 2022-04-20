@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 import { generate as id } from 'shortid';
 
@@ -157,7 +158,7 @@ const Search = styled.div`
     }
 `
 
-const Header = ({items, logo, logo2, logoMobile, search}) => {
+const Header = ({items, logo, logo2, logoMobile, search, hashLink = false}) => {
 
     const [active, setActive] = useState(false);
 
@@ -214,16 +215,23 @@ const Header = ({items, logo, logo2, logoMobile, search}) => {
                            onClick={() => handleOnClick(myRef)}
                            ref={myRef}
                            key={id()}>
-                    <Link className='menubar__menuitem-link' to="/">
+                    {!hashLink && <Link className='menubar__menuitem-link' to="/">
                         {item.label}
-                    </Link>
+                    </Link>}
                     {buildUlSubItems(item.items)}
                 </li>
             } else {
                 return <li className="menubar__menu-item" key={id()} onClick={() => handleOnClick(myRef)} ref={myRef}>
-                    <Link className="menubar__menuitem-link" to={item.routerLink}>
+                    {!hashLink && <Link className="menubar__menuitem-link" to={item.routerLink}>
                         {item.label}
-                    </Link>
+                    </Link>}
+                    {hashLink && <HashLink 
+                                            smooth
+                                            className='menubar__menuitem-link' 
+                                            to={item.routerLink}
+                                            scroll={(el) => el.scrollIntoView({ behavior: 'auto', block: 'end' })}>
+                        {item.label}
+                    </HashLink>}
                     {index + 1 !== items.length && <span className='menubar__border'></span>}
                 </li>
             }

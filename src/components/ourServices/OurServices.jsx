@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { HashLink } from 'react-router-hash-link';
 
 // Theming
 import colors from '../../theming/colors';
@@ -102,7 +103,8 @@ const OurServices = ({ourServices}) => {
     }
 
     return (
-        <OurServicesContainer   className='our-services'
+        <OurServicesContainer   id='nuestros-servicios'
+                                className='our-services'
                                 style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${ourServices.imageBg.url})`}}>
             { buildServices() }
         </OurServicesContainer>
