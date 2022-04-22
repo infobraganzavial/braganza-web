@@ -87,9 +87,8 @@ const Responsive = styled.div`
             max-width: 360px;
             min-width: 360px;
             background-color: #49ad6e;
-            clip-path: circle(100% at 50% 50%);
-            padding-top: 1rem;
-            border-radius: 17rem 17rem 0 0;
+            /*clip-path: circle(100% at 50% 50%);*/
+            border-radius: 50% 50% 0 0;
         }
 
         .our-services__figure-container div {
@@ -101,6 +100,7 @@ const Responsive = styled.div`
             margin: auto;
             width: 100%;
             min-width: max-content;
+            margin-top: 30px;
         }
 
         .our-services__info {
