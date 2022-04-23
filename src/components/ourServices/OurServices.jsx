@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { HashLink } from 'react-router-hash-link';
 
 // Theming
 import colors from '../../theming/colors';

@@ -1,9 +1,6 @@
 
 import styled from 'styled-components';
 
-// Theming
-import colors from '../../theming/colors';
-
 const Container = styled.article`
     position: relative;
     display: flex;
