@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { HashLink } from 'react-router-hash-link';
 
 // Theming
 import colors from '../../theming/colors';
@@ -30,8 +31,8 @@ const Service = styled.article`
 
 const FigureContainer = styled.div`
     position: relative;
-    width: 30%;
-    min-width: 460px;
+    width: 345px;
+    min-width: 345px;
     height: inherit;
     overflow: hidden;
     background: linear-gradient(90deg, rgba(73,173,110,1) 50%, rgba(255,255,255,0) 50%);
@@ -43,12 +44,12 @@ const FigureWrapper = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${colors.tertiaryCorlor}; 
-    clip-path: circle(47% at 50% 50%);
+    border-radius: 0 50% 50% 0;
 `
 
 const Figure = styled.figure`
     margin: auto;
-    margin-right: 70px;
+    margin-right: 29px;
     padding: 0;
     width: 30%;
     max-width: 300px;
@@ -102,7 +103,8 @@ const OurServices = ({ourServices}) => {
     }
 
     return (
-        <OurServicesContainer   className='our-services'
+        <OurServicesContainer   id='nuestros-servicios'
+                                className='our-services'
                                 style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${ourServices.imageBg.url})`}}>
             { buildServices() }
         </OurServicesContainer>

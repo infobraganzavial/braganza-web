@@ -145,7 +145,8 @@ const ContactUs = () => {
     );
 
     return (
-        <FormContainer className="form__container--contactUs">
+        <FormContainer  id="contacto"
+                        className="form__container--contactUs">
             <FormWrapper>
                 <FormCard className="form__card--contactUs">
                     <Form 
