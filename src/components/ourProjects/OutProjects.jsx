@@ -29,10 +29,6 @@ const Hexagon = styled.section`
     margin: 50px 20px 70px;
     cursor: pointer;
 
-    box-shadow: 8px 9px 24px -4px rgba(0,0,0,0.74);
-    -webkit-box-shadow: 8px 9px 24px -4px rgba(0,0,0,0.74);
-    -moz-box-shadow: 8px 9px 24px -4px rgba(0,0,0,0.74);
-
     & ::before {
         content: '';
         position: absolute;
@@ -54,11 +50,14 @@ const Shape = styled.article`
     width: 100%;
     height: 100%;
     background: #000;
-    /* clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%); */
-    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+    box-shadow: 8px 9px 24px -4px rgba(0,0,0,0.74);
+    -webkit-box-shadow: 8px 9px 24px -4px rgba(0,0,0,0.74);
+    -moz-box-shadow: 8px 9px 24px -4px rgba(0,0,0,0.74);
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
     transition: 0.5s;
-    transform: translateY(-30px);
+    &:hover {
+        transform: translateY(-30px);
+    } 
     & img {
         position: absolute;
         top: 0;

@@ -6,6 +6,8 @@ import ContactUs from '../../components/contactUs/ContactUs';
 import OurServices from '../../components/ourServices/OurServices';
 import AboutUs from '../../components/aboutUs/AboutUs';
 import OurProjects from '../../components/ourProjects/OutProjects';
+import ImagesHoverEffect from '../../components/imagesHoverEffect/ImagesHoverEffect';
+import Services from '../../components/services/Services';
 
 const Landing = () => {
 
@@ -76,50 +78,115 @@ const Landing = () => {
 		content: [
 			{
 				id: 1,
-				title: 'Proyecto 1',
-				service: 'Lorem ipsum dolor sit amet consectetur',
+				title: 'Plataforma para galpones en Ruta 101 Km 24',
+				service: 'Cliente: Cherdil',
 				images : [
 					{
 						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/953783217071226941/958826408560447538/service1.jpg'
+						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573908607893565/CHERDIL.jpeg'
 					}
 				],
-				alliedCompany: 'company 1'
+				alliedCompany: 'Lavalleja, Marzo – Junio  2021'
 			},
 			{
 				id: 2,
-				title: 'Proyecto 2',
-				service: 'Lorem ipsum dolor sit amet consectetur',
+				title: 'Saneamiento. Tendido de PEAD cruce CCFC.',
+				service: 'Cliente: Gofinal',
 				images : [
 					{
 						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/953783217071226941/958826408560447538/service1.jpg'
+						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573908834369606/GEOFINAL.jpeg'
 					}
 				],
-				alliedCompany: 'company 1'
+				alliedCompany: 'Canelones, Junio - Agosto 2021'
 			},
 			{
 				id: 3,
-				title: 'Proyecto 3',
-				service: 'Lorem ipsum dolor sit amet consectetur',
+				title: 'Licitación Pública Nacional 02/2020: Pavimentación circuito “Vejigas- Barrancas”',
+				service: 'Cliente: OSUSA',
 				images : [
 					{
 						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/953783217071226941/958826408560447538/service1.jpg'
+						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573909039902780/OSUSA.jpeg'
 					}
 				],
-				alliedCompany: 'company 1'
+				alliedCompany: 'Lavalleja, Marzo – Junio  2021'
+			},
+			{
+				id: 4,
+				title: 'UPM2 - Realización de dique impermeable en arcilla, revestido en piedra.',
+				service: 'Cliente: JOSE CUJO',
+				images : [
+					{
+						id: 1,
+						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573909287346227/UPM2_-_DIQUE.jpeg'
+					}
+				],
+				alliedCompany: 'Paso de los Toros, Agosto 2021'
+			},
+			{
+				id: 5,
+				title: 'UPM2 – Movimiento de piedra y explosión de piedra con martillo hidráulico.',
+				service: 'Cliente: JOSE CUJO',
+				images : [
+					{
+						id: 1,
+						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573909547397181/UPM2_-_EXPLOSION_PIEDRA.jpeg'
+					}
+				],
+				alliedCompany: 'Paso de los Toros, Agosto 2021'
+			},
+			{
+				id: 6,
+				title: 'UPM2 – Excavación y nivelación para caño de pead de 1500.',
+				service: 'Cliente: JOSE CUJO',
+				images : [
+					{
+						id: 1,
+						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573909757104148/UPM2_-_NIVELACION.jpeg'
+					}
+				],
+				alliedCompany: 'Paso de los Toros, Agosto 2021'
 			},
 		]
 
 	} 
 
+	const sections = [
+		{
+			id: 1,
+			principalImage: {
+				url: 'https://cdn.discordapp.com/attachments/967459177339424778/967466069524619294/ALQUILER_5.jpeg',
+			},
+			title:'OBRAS DE MOVIMIENTO DE SUELOS E INFRAESTRUCTURA',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo sapiente et. Quis consectetur commodi ea.',
+		},
+		{
+		   id: 2,
+		   principalImage: {
+			   url: 'https://cdn.discordapp.com/attachments/967459177339424778/967466069868572724/ALQUILER_7.jpeg',
+		   },
+		   title:'ALQUILERES DE MAQUINARIA',
+		   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo sapiente et. Quis consectetur commodi ea.',
+	   },
+	   {
+		   id: 3,
+		   principalImage: {
+			  url: 'https://cdn.discordapp.com/attachments/967459177339424778/967466070132785202/EXCAVACION_2.jpeg',
+		   },
+		   title:'Otro Servicio',
+		   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo sapiente et. Quis consectetur commodi ea.',
+		}
+	];
+
 	return (
 		<>
 			<Carousel/>
-			<OurServices ourServices={ourServices}/>
+			{/* <OurServices ourServices={ourServices}/> */}
+			<ImagesHoverEffect sections={sections} />
 			<AboutUs aboutUs={aboutUs}/>
 			<OurProjects ourProjects={ourProjects}/>
+			{/* <Services services={sections} /> */}
 			<ContactUs/>
 		</>
 	);
