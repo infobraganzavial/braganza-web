@@ -12,21 +12,12 @@ import { generate as id } from "shortid";
 import 'swiper/css';
 import './Carousel.css';
 
-const Carousel = () => {
+const Carousel = ({slideImages}) => {
 
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
     let sw;
-
-    const slideImages = [
-        {
-            url: 'https://cdn.discordapp.com/attachments/953783217071226941/958751710250172426/slider1.png',
-        },
-        {
-            url: 'https://cdn.discordapp.com/attachments/953783217071226941/958768047294906388/slider2.png',
-        },
-    ];
 
     /**
      * @description Cargar SwiperSlide.
