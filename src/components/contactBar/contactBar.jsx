@@ -6,7 +6,7 @@ import styled from 'styled-components';
 // import Loader from "../../components/loader/Loader";
 
 // Theming
-import colors from '../../theming/colors.js';
+// import colors from '../../theming/colors.js';
 
 // Services
 // import { ContactUsService } from "../../services/api/CountryService";
