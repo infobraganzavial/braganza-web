@@ -38,14 +38,27 @@ const ContactBarSection2 = styled.section`
 `
 
 const ContactBarIcon = styled.i`
-    background-color: ${colors.tertiaryCorlor};
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     display: block;
     text-align: center;
     line-height: 30px;
     margin-right: 10px;
+
+    & img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: .5s;
+    }
+
+    & img:hover {
+        transform: scale(1.1);
+    }
 `;
 
 const ContactBarGroup = styled.div`
@@ -73,22 +86,21 @@ const ContactBar = () => {
         <ContactBarContainer className="contact-bar__containner">
             <ContactBarSection1>
                 <ContactBarGroup>
-                    <ContactBarIcon>c</ContactBarIcon>
+                    <ContactBarIcon><img src="/assets/svg/email.svg" alt="" /></ContactBarIcon>
                     <span>Correo</span>
                 </ContactBarGroup>
                 <ContactBarGroup>
-                    <ContactBarIcon>t</ContactBarIcon>
+                    <ContactBarIcon><img src="/assets/svg/phone-number.svg" alt="" /></ContactBarIcon>
                     <span>Teléfono</span>
                 </ContactBarGroup>
                 <ContactBarGroup>
-                    <ContactBarIcon>c</ContactBarIcon>
+                    <ContactBarIcon><img src="/assets/svg/whatsapp.svg" alt="" /></ContactBarIcon>
                     <span>Whatsapp</span>
                 </ContactBarGroup>
             </ContactBarSection1>
             <ContactBarSection2>
-                <ContactBarIcon>1</ContactBarIcon>
-                <ContactBarIcon>2</ContactBarIcon>
-                <ContactBarIcon>3</ContactBarIcon>
+                <ContactBarIcon><img src="/assets/svg/facebook2.svg" alt="" /></ContactBarIcon>
+                <ContactBarIcon><img src="/assets/svg/instagram.svg" alt="" /></ContactBarIcon>
             </ContactBarSection2>
         </ContactBarContainer>
     );

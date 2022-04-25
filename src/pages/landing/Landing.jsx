@@ -17,7 +17,7 @@ const Landing = () => {
             url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186667636777060/2.jpeg',
         },
         {
-            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186667917803550/3.jpeg',
+            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968256862061490286/3.jpeg',
         },
         {
             url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186668450476103/4.jpeg',

@@ -24,7 +24,7 @@ const Hexagon = styled.section`
     height: 400px;
     max-height: max-content;
     margin: 50px 20px 70px;
-    cursor: pointer;
+    /* cursor: pointer; */
 
     & ::before {
         content: '';
