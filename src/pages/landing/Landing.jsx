@@ -41,12 +41,30 @@ const Landing = () => {
 			},
 		]
 
-	} 
+	}
+
+	const slideImages = [
+        {
+            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186667368333332/1.jpeg',
+        },
+        {
+            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186667636777060/2.jpeg',
+        },
+        {
+            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186667917803550/3.jpeg',
+        },
+        {
+            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186668450476103/4.jpeg',
+        },
+        {
+            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186668718891038/5.jpeg',
+        },
+    ];
 
 	const aboutUs ={
 		imageBg : {
 			id: 1,
-			url: 'https://img.freepik.com/foto-gratis/excavadora-cavando-suelo-luz-dia_23-2149194775.jpg?w=1380&t=st=1649293241~exp=1649293841~hmac=4df9ede8c630510cefea3a604da39c65231b12859e4cec364840d2cedf44c5a2'
+			url: 'https://cdn.discordapp.com/attachments/967459177339424778/968185506775044196/NOSOTROS_1.jpeg'
 		},
 		content: [
 			{
@@ -156,32 +174,32 @@ const Landing = () => {
 		{
 			id: 1,
 			principalImage: {
-				url: 'https://cdn.discordapp.com/attachments/967459177339424778/967466069524619294/ALQUILER_5.jpeg',
+				url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544324427896/MOVIMIENTO_DE_TIERRA.jpeg',
 			},
-			title:'OBRAS DE MOVIMIENTO DE SUELOS E INFRAESTRUCTURA',
+			title:'ALQUILERES DE MAQUINARIA',
 			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo sapiente et. Quis consectetur commodi ea.',
 		},
 		{
 		   id: 2,
 		   principalImage: {
-			   url: 'https://cdn.discordapp.com/attachments/967459177339424778/967466069868572724/ALQUILER_7.jpeg',
+			   url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544710279178/TOPOGRAFIA.jpeg',
 		   },
-		   title:'ALQUILERES DE MAQUINARIA',
+		   title:'CÁLCULO DE VOLUMEN Y RELEVAMIENTO',
 		   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo sapiente et. Quis consectetur commodi ea.',
 	   },
 	   {
 		   id: 3,
 		   principalImage: {
-			  url: 'https://cdn.discordapp.com/attachments/967459177339424778/967466070132785202/EXCAVACION_2.jpeg',
+			  url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544026611762/ALQUILER.jpeg',
 		   },
-		   title:'Otro Servicio',
+		   title:'OBRAS DE MOVIMIENTO DE SUELOS E INFRAESTRUCTURA',
 		   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo sapiente et. Quis consectetur commodi ea.',
 		}
 	];
 
 	return (
 		<>
-			<Carousel/>
+			<Carousel slideImages={slideImages} />
 			{/* <OurServices ourServices={ourServices}/> */}
 			<ImagesHoverEffect sections={sections} />
 			<AboutUs aboutUs={aboutUs}/>
