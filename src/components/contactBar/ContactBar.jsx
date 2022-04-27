@@ -37,6 +37,18 @@ const ContactBarSection2 = styled.section`
 
 `
 
+const Link = styled.a`
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: .5s;
+
+    &:hover {
+        color: #fff;
+    }
+`
+
 const ContactBarIcon = styled.i`
     display: flex;
     justify-content: center;
@@ -106,10 +118,14 @@ const ContactBar = () => {
             </ContactBarSection1>
             <ContactBarSection2>
                 <ContactBarIcon>
-                    <ion-icon name="logo-facebook"></ion-icon>
+                    <Link href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </Link>
                 </ContactBarIcon>
                 <ContactBarIcon>
-                    <ion-icon name="logo-instagram"></ion-icon>
+                    <Link href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </Link>
                 </ContactBarIcon>
             </ContactBarSection2>
         </ContactBarContainer>

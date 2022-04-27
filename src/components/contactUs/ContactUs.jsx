@@ -13,7 +13,7 @@ import colors from '../../theming/colors.js';
 // import { ContactUsService } from "../../services/api/CountryService";
 
 const FormContainer = styled.div`
-    min-height: 100vh;
+    min-height: calc(100vh - 100px);
     /* background: linear-gradient(-27deg, ${colors.secundaryColorRgba} 50%, ${colors.primaryColorRgba} 50%); */
     background-image: url('/assets/contactus/firm-handshake.jpg');
     background-position: center;
@@ -27,7 +27,7 @@ const FormWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: inherit;
     backdrop-filter: grayscale(100%);
     padding-bottom: 1rem;
 `

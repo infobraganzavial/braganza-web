@@ -145,7 +145,31 @@ const Responsive = styled.div`
             padding: 1rem;
         }
 
+        .aboutus__info {
+            padding: 1rem;
+        }
+
+        .aboutus__service .aboutus__info h2 {
+            font-size: 1.5rem;
+        }
+
+        .aboutus__service .aboutus__info p {
+            font-size: .8rem;
+        }
+
         /* About us ends here! */
+
+        
+        /* OurProjects begins here!! */
+        .projects__hexagon-wrapper {
+            padding: 1rem;
+        }
+        .projects__hexagon {
+            width: 100%;
+            min-width: 100%;
+            max-width 522px;
+        }
+        /* OurProjects ends here!! */
     `}
 
     ${device.mobile`
@@ -172,6 +196,13 @@ const Responsive = styled.div`
             min-width: 100%;
         }
         /* Contact Us ends here! */ 
+
+        /* OurProjects begins here!! */
+        .projects__hexagon {
+            width: 100%;
+            min-width: 100%;
+        }
+        /* OurProjects ends here!! */
         `}
 
     ${device.laptop`

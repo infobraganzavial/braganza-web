@@ -7,30 +7,31 @@ const AboutUsContainer = styled.section`
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 100px);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     padding: 5rem;
 `
 
 const Service = styled.article`
     display: flex;
     position: relative;
-    width: 35%;
+    width: 40%;
     min-width: 340px;
     height: auto;
-    min-height: 360px;
+    min-height: max-content;
+    max-height: max-content;
     margin: 1rem 0;
     flex-direction: column;
     background-color: #fff;
 
     & section:first-of-type h2 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 `
 
@@ -42,14 +43,16 @@ const Info = styled.section`
     justify-content: space-around;
     color: ${colors.darkColor};
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     
     & h2, p {
+        font-size: 1rem;
         text-transform: uppercase;
         text-align: center;
     }
 
     & h2 {
+        font-size: 1.5rem;
         color: ${colors.primaryColor};
     }
 
@@ -60,11 +63,11 @@ const AboutUs = ({aboutUs}) => {
 
     const buildServices = () =>{
         return (
-            <Service >
+            <Service className='aboutus__service'>
                 {
                     aboutUs.content.map( s => {
                         return (
-                            <Info 
+                            <Info className='aboutus__info'
                                   key={s.id} 
                                   length={aboutUs.content.length}>
                                 <h2>{s.title}</h2>

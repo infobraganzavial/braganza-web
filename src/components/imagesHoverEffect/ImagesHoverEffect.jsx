@@ -7,7 +7,7 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: start;
     min-height: calc(100vh - 95px);
-    background: ${({theme}) => theme.primaryColor};
+    /* background: ${({theme}) => theme.primaryColor}; */
 
     & .services__title {
         padding: 1rem;
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
         width: 100%;
         height: 100%;
         min-height: inherit;
-        background: ${({theme}) => theme.primaryColor};
+        /* background: ${({theme}) => theme.primaryColor}; */
     }
 
     & .section__container:hover .clip {
@@ -35,9 +35,11 @@ const Wrapper = styled.div`
         width: 100%;
         height: 100%;
         transition: .5s;
+        filter: grayscale(100%);
 
         &:hover {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            filter: grayscale(0);
         }
 
         &:hover .content{
@@ -58,21 +60,18 @@ const Wrapper = styled.div`
     }
 
     & .clip.clip1 {
-        /* background: url(assets/images/control.png); */
         background-size: cover;
         background-position: center;
         clip-path: polygon(0 0, 55% 0, 20% 100%, 0% 100%);
     }
 
     & .clip.clip2 {
-        /* background: url(assets/images/air_fryer.png); */
         background-size: cover;
         background-position: center;
         clip-path: polygon(55% 0, 100% 0, 45% 100%, 20% 100%);
     }
 
     & .clip.clip3 {
-        /* background: url(assets/images/shoes.png); */
         background-size: cover;
         background-position: center;
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 45% 100%);
