@@ -1,6 +1,4 @@
-
 import styled from 'styled-components';
-import { generate as id } from "shortid";
 import { HashLink } from 'react-router-hash-link';
 
 const StyledFooter = styled.footer`
