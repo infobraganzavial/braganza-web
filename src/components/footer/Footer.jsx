@@ -83,17 +83,17 @@ const Footer = ({socialNetworks}) => {
             </div>
             <SocialNetwork className="social_icon">
                 <Item>
-                    <Link href="http://" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
                         <ion-icon name="logo-facebook"></ion-icon>
                     </Link>
                 </Item>
                 <Item>
-                    <Link href="http://" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
                         <ion-icon name="logo-whatsapp"></ion-icon>
                     </Link>
                 </Item>
                 <Item>
-                    <Link href="http://" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
                         <ion-icon name="logo-instagram"></ion-icon>
                     </Link>
                 </Item>
