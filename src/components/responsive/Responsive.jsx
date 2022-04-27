@@ -158,6 +158,18 @@ const Responsive = styled.div`
         }
 
         /* About us ends here! */
+
+        
+        /* OurProjects begins here!! */
+        .projects__hexagon-wrapper {
+            padding: 1rem;
+        }
+        .projects__hexagon {
+            width: 100%;
+            min-width: 100%;
+            max-width 522px;
+        }
+        /* OurProjects ends here!! */
     `}
 
     ${device.mobile`
@@ -184,6 +196,13 @@ const Responsive = styled.div`
             min-width: 100%;
         }
         /* Contact Us ends here! */ 
+
+        /* OurProjects begins here!! */
+        .projects__hexagon {
+            width: 100%;
+            min-width: 100%;
+        }
+        /* OurProjects ends here!! */
         `}
 
     ${device.laptop`

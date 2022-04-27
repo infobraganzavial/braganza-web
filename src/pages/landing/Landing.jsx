@@ -30,7 +30,7 @@ const Landing = () => {
 	const aboutUs ={
 		imageBg : {
 			id: 1,
-			url: 'https://cdn.discordapp.com/attachments/967459177339424778/968185506775044196/NOSOTROS_1.jpeg'
+			url: 'https://cdn.discordapp.com/attachments/967459177339424778/968694977070760027/NOSOTROS_3.jpeg'
 		},
 		content: [
 			{
@@ -57,13 +57,13 @@ const Landing = () => {
 	const ourProjects ={
 		imageBg : {
 			id: 1,
-			url: 'https://img.freepik.com/foto-gratis/gran-excavadora-construccion-color-amarillo-sitio-construccion-cantera-explotacion-canteras_168410-2297.jpg?w=996'
+			url: 'https://cdn.discordapp.com/attachments/967459177339424778/968267304355913748/WhatsApp_Image_2022-04-25_at_6.43.22_PM.jpeg'
 		},
 		content: [
 			{
 				id: 1,
 				title: 'Plataforma para galpones en Ruta 101 Km 24',
-				service: 'Cliente: Cherdil',
+				service: '',
 				images : [
 					{
 						id: 1,
@@ -75,11 +75,11 @@ const Landing = () => {
 			{
 				id: 2,
 				title: 'Saneamiento. Tendido de PEAD cruce CCFC.',
-				service: 'Cliente: Gofinal',
+				service: '',
 				images : [
 					{
 						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573908834369606/GEOFINAL.jpeg'
+						url: 'https://cdn.discordapp.com/attachments/967459177339424778/968695458530730094/GEOFINAL.jpeg'
 					}
 				],
 				alliedCompany: 'Canelones, Junio - Agosto 2021'
@@ -87,7 +87,7 @@ const Landing = () => {
 			{
 				id: 3,
 				title: 'Licitación Pública Nacional 02/2020: Pavimentación circuito “Vejigas- Barrancas”',
-				service: 'Cliente: OSUSA',
+				service: '',
 				images : [
 					{
 						id: 1,
@@ -99,7 +99,7 @@ const Landing = () => {
 			{
 				id: 4,
 				title: 'UPM2 - Realización de dique impermeable en arcilla, revestido en piedra.',
-				service: 'Cliente: JOSE CUJO',
+				service: '',
 				images : [
 					{
 						id: 1,
@@ -111,7 +111,7 @@ const Landing = () => {
 			{
 				id: 5,
 				title: 'UPM2 – Movimiento de piedra y explosión de piedra con martillo hidráulico.',
-				service: 'Cliente: JOSE CUJO',
+				service: '',
 				images : [
 					{
 						id: 1,
@@ -123,11 +123,11 @@ const Landing = () => {
 			{
 				id: 6,
 				title: 'UPM2 – Excavación y nivelación para caño de pead de 1500.',
-				service: 'Cliente: JOSE CUJO',
+				service: '',
 				images : [
 					{
 						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573909757104148/UPM2_-_NIVELACION.jpeg'
+						url: 'https://cdn.discordapp.com/attachments/967459177339424778/968695458799173703/UPM2_-_NIVELACION.jpeg'
 					}
 				],
 				alliedCompany: 'Paso de los Toros, Agosto 2021'
