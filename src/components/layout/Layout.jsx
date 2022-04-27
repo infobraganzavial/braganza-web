@@ -1,10 +1,11 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-// Modulos propios
+// Components
 import Landing from '../../pages/landing/Landing';
 import Header from '../header/Header';
-import ContactBar from '../contactBar/contactBar';
+import ContactBar from '../contactBar/ContactBar';
+import Footer from '../footer/Footer';
 // import Footer from '../footer/Footer';
 
 const Layout = (props) => {
@@ -47,6 +48,25 @@ const Layout = (props) => {
           **/
          const logo = '/logo512.png';
          const logoMobile = '/logo192.png';
+
+
+         const socialNetworks = [
+            {
+               href: 'https://www.instagram.com/',
+               alt: 'instagram',
+               img: '/assets/svg/instagram-footer.svg'
+            },
+            {
+               href: 'https://web.whatsapp.com/',
+               alt: 'whatsapp',
+               img: '/assets/svg/whatsapp.svg'
+            },
+            {
+               href: 'https://www.facebook.com/',
+               alt: 'facebook',
+               img: '/assets/svg/facebook2.svg'
+            },
+         ];
  
     return ( 
         // Creamos nuestro Layout directamente desde App.
@@ -58,12 +78,10 @@ const Layout = (props) => {
                   logoMobile = {logoMobile}
                   hashLink
          />
-        <Routes>
-           <Route exact path="/" element={<Landing />}/>
-           {/* <Footer brand={footer.brand}
-                   socialNetworks={footer.socialNetworks}
-                     /> */}
-        </Routes>
+         <Routes>
+            <Route exact path="/" element={<Landing />}/>
+         </Routes>
+         <Footer socialNetworks={socialNetworks} />
         </>
      );
 }
