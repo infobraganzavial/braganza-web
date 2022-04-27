@@ -11,7 +11,7 @@ const Landing = () => {
 
 	const slideImages = [
         {
-            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186667368333332/1.jpeg',
+            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968260441711190107/MOVIMIENTO_DE_TIERRA_EN_FACULTAD_DE_VERTERINARIA.jpeg',
         },
         {
             url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186667636777060/2.jpeg',
@@ -20,7 +20,7 @@ const Landing = () => {
             url: 'https://cdn.discordapp.com/attachments/967459177339424778/968256862061490286/3.jpeg',
         },
         {
-            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186668450476103/4.jpeg',
+            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968253673014693989/alquileres.jpeg',
         },
         {
             url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186668718891038/5.jpeg',
@@ -156,7 +156,7 @@ const Landing = () => {
 	   {
 		   id: 3,
 		   principalImage: {
-			  url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544026611762/ALQUILER.jpeg',
+			  url: 'https://cdn.discordapp.com/attachments/967459177339424778/968253339143921794/ALQUILER_6.jpeg',
 		   },
 		   title:'OBRAS DE MOVIMIENTO DE SUELOS E INFRAESTRUCTURA',
 		   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo sapiente et. Quis consectetur commodi ea.',

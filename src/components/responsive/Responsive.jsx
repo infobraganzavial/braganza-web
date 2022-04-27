@@ -145,6 +145,18 @@ const Responsive = styled.div`
             padding: 1rem;
         }
 
+        .aboutus__info {
+            padding: 1rem;
+        }
+
+        .aboutus__service .aboutus__info h2 {
+            font-size: 1.5rem;
+        }
+
+        .aboutus__service .aboutus__info p {
+            font-size: .8rem;
+        }
+
         /* About us ends here! */
     `}
 

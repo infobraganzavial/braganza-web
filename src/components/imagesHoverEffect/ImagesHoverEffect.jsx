@@ -35,9 +35,11 @@ const Wrapper = styled.div`
         width: 100%;
         height: 100%;
         transition: .5s;
+        filter: grayscale(100%);
 
         &:hover {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            filter: grayscale(0);
         }
 
         &:hover .content{
