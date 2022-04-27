@@ -51,7 +51,7 @@ const Carousel = ({slideImages}) => {
                 pagination={pagination}
                 style={{ '--swiper-navigation-color': '#fff','--swiper-pagination-color': '#fff'}}
                 loop={true}
-                speed={4000}
+                speed={1000}
                 grabCursor={false}
                 autoplay={{ 'delay': 4000, 'disableOnInteraction': false }}
                 modules={[Autoplay, Navigation, Pagination]}
