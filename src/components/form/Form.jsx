@@ -229,7 +229,7 @@ const Form = ({title, handleSubmitForm, fields, defaultValues, defaultValuesErro
                                         return !!value.trim();
                                     },
                                     pattern : {
-                                        name: field.pattern,
+                                        value: field.pattern,
                                         message: 'Minimum eight characters, at least one letter, one number and one special character'
                                     }
                                 })}
