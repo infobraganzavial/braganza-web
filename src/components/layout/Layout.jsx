@@ -1,8 +1,7 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 // Components
-import Landing from '../../pages/landing/Landing';
 import Header from '../header/Header';
 import ContactBar from '../contactBar/ContactBar';
 import Footer from '../footer/Footer';
@@ -78,9 +77,7 @@ const Layout = (props) => {
                   logoMobile = {logoMobile}
                   hashLink
          />
-         <Routes>
-            <Route exact path="/" element={<Landing />}/>
-         </Routes>
+         <Outlet/>
          <Footer socialNetworks={socialNetworks} />
         </>
      );
