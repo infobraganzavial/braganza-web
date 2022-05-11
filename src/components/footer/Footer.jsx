@@ -88,7 +88,7 @@ const Footer = ({socialNetworks}) => {
                     </Link>
                 </Item>
                 <Item>
-                    <Link href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://wa.me/+59898998465?text=Estoy%20interesado%20en%20contactarlos" target="_blank" rel="noopener noreferrer">
                         <ion-icon name="logo-whatsapp"></ion-icon>
                     </Link>
                 </Item>

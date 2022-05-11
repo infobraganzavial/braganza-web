@@ -80,6 +80,15 @@ const ContactBarGroup = styled.div`
     align-items: center;
 `
 
+const ContactBarLink = styled.a`
+    color: #fff;
+    list-style: none;
+
+    &:hover {
+        color: #fff;
+    }
+`
+
 const ContactBar = () => {
 
     // const [loading, setLoading] = useState(false);
@@ -98,22 +107,29 @@ const ContactBar = () => {
         <ContactBarContainer className="contact-bar__containner">
             <ContactBarSection1>
                 <ContactBarGroup>
+                <ContactBarLink href="mailto:braganzavial@gmail.com" target="_blank" rel="noopener noreferrer">
                     <ContactBarIcon>
                         <ion-icon name="mail-outline"></ion-icon>
                     </ContactBarIcon>
-                    <span>Correo</span>
+                </ContactBarLink>
+                    <span>info.braganzavial@gmail.com</span>
                 </ContactBarGroup>
                 <ContactBarGroup>
+                <ContactBarLink href="tel:+59826814391" target="_blank" rel="noopener noreferrer">
                     <ContactBarIcon>
                         <ion-icon name="call-outline"></ion-icon>
                     </ContactBarIcon>
-                    <span>Teléfono</span>
+                </ContactBarLink>
+                    <span>(+598) 2681 4391 </span>
                 </ContactBarGroup>
                 <ContactBarGroup>
-                    <ContactBarIcon>
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                    </ContactBarIcon>
-                    <span>Whatsapp</span>
+                    <ContactBarLink href="https://wa.me/+59898998465?text=Estoy%20interesado%20en%20contactarlos" target="_blank" rel="noopener noreferrer">
+                        <ContactBarIcon>
+                            <ion-icon name="logo-whatsapp">
+                            </ion-icon>
+                        </ContactBarIcon>
+                    </ContactBarLink>
+                    <span>(+598) 98 998 465</span>
                 </ContactBarGroup>
             </ContactBarSection1>
             <ContactBarSection2>
