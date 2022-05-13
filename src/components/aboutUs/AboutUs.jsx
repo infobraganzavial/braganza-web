@@ -35,8 +35,6 @@ const Service = styled.article`
     }
 `
 
-
-
 const Info = styled.section`
     display: flex;
     flex-direction: column;
@@ -49,14 +47,13 @@ const Info = styled.section`
         font-size: 1rem;
         text-transform: uppercase;
         text-align: center;
+        white-space: pre-line;
     }
 
     & h2 {
         font-size: 1.5rem;
         color: ${colors.primaryColor};
     }
-
-   
 `
 
 const AboutUs = ({aboutUs}) => {
@@ -74,11 +71,9 @@ const AboutUs = ({aboutUs}) => {
                                 <p>{s.description}</p>
                             </Info>
                         )
-                    
                     })
                 }
             </Service>
-             
         )
     }
 

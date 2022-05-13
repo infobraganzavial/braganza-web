@@ -36,20 +36,12 @@ const Landing = () => {
 			{
 				id: 1,
 				title: 'Sobre nosotros',
-				description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis est eum laborum quae cum ratione enim adipisci, tempore possimus officiis at quasi repudiandae, tempora laudantium sequi dolores quis similique vero?',
-			},
-			{
-				id: 2,
-				title: 'Misión',
-				description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis est eum laborum quae cum ratione enim adipisci, tempore possimus officiis at quasi repudiandae, tempora laudantium sequi dolores quis similique vero?',
-				
-			},
-			{
-				id: 3,
-				title: 'Visión',
-				description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis est eum laborum quae cum ratione enim adipisci, tempore possimus officiis at quasi repudiandae, tempora laudantium sequi dolores quis similique vero?',
-				
-			},
+				description: `Braganza Vial SAS es una empresa especializada en la realización de obras de infraestructura y saneamiento, que surge de la necesidad de unir los conocimientos adquiridos por el ingeniero Pablo Sánchez a lo largo de su carrera profesional, en conjunto con la experiencia de Eduardo Joao, quien ha dedicado años de su vida al rubro.
+
+				A pesar de que nuestra empresa tiene poco tiempo de fundada, el equipo que lo compone cuenta con amplia experiencia en colaboraciones con proyectos de gran envergadura, además de disponer de maquinaria de calidad que permitan la realización de los trabajos de una manera segura y eficiente.
+
+				Cada proyecto para nosotros representa un reto que estamos dispuestos a afrontar con dedicación, siempre mostrando nuestro compromiso en cumplir con las expectativas de nuestros clientes. Nos enfocamos en brindar las mejores soluciones constructivas en base a las necesidades de nuestros clientes, caracterizándonos por nuestra flexibilidad ante cualquier trabajo, apostando siempre al éxito del proyecto, en cuanto a tiempos de construcción y calidad.`,
+			}
 		]
 
 	} 
