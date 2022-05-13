@@ -62,7 +62,7 @@ const Landing = () => {
 						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573908607893565/CHERDIL.jpeg'
 					}
 				],
-				alliedCompany: 'Lavalleja, Marzo – Junio  2021'
+				alliedCompany: 'Lavalleja, Marzo - Junio  2021'
 			},
 			{
 				id: 2,
@@ -86,7 +86,7 @@ const Landing = () => {
 						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573909039902780/OSUSA.jpeg'
 					}
 				],
-				alliedCompany: 'Lavalleja, Marzo – Junio  2021'
+				alliedCompany: 'Lavalleja, Marzo - Junio  2021'
 			},
 			{
 				id: 4,
@@ -102,7 +102,7 @@ const Landing = () => {
 			},
 			{
 				id: 5,
-				title: 'UPM2 – Movimiento de piedra y explosión de piedra con martillo hidráulico.',
+				title: 'UPM2 - Movimiento de piedra y explosión de piedra con martillo hidráulico.',
 				service: '',
 				images : [
 					{
@@ -114,7 +114,7 @@ const Landing = () => {
 			},
 			{
 				id: 6,
-				title: 'UPM2 – Excavación y nivelación para caño de pead de 1500.',
+				title: 'UPM2 - Excavación y nivelación para caño de pead de 1500.',
 				service: '',
 				images : [
 					{
@@ -135,7 +135,7 @@ const Landing = () => {
 				url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544324427896/MOVIMIENTO_DE_TIERRA.jpeg',
 			},
 			title:'ALQUILERES DE MAQUINARIA',
-			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo sapiente et. Quis consectetur commodi ea.',
+			description: 'Contamos con variedad de equipos dispuestos a ser alquilados para la realización de distintos trabajos y al personal capacitado para su manejo. Entre estos equipos tenemos retroexcavadoras, excavadoras de pala de diferentes capacidades, compactadoras, camiones para carga, entre otros.',
 		},
 		{
 		   id: 2,
@@ -143,7 +143,7 @@ const Landing = () => {
 			   url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544710279178/TOPOGRAFIA.jpeg',
 		   },
 		   title:'CÁLCULO DE VOLUMEN Y RELEVAMIENTO',
-		   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo sapiente et. Quis consectetur commodi ea.',
+		   description: 'Hacemos relevamientos de superficies, replanteos de información en sitio para seguimiento de proyectos, cálculo de volúmenes de material y estimación de los mismos en base a las especificaciones del proyecto.',
 	   },
 	   {
 		   id: 3,
@@ -151,7 +151,7 @@ const Landing = () => {
 			  url: 'https://cdn.discordapp.com/attachments/967459177339424778/968253339143921794/ALQUILER_6.jpeg',
 		   },
 		   title:'OBRAS DE MOVIMIENTO DE SUELOS E INFRAESTRUCTURA',
-		   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus nemo sapiente et. Quis consectetur commodi ea.',
+		   description: 'Nuestro fuerte es realizar trabajos referentes a infraestructura, vialidad y de saneamiento. Realizamos trabajos de excavación, compactación de rellenos, demolición, incluyendo el transporte de los mismos desde el lugar de préstamo, o al vertedero.',
 		}
 	];
 

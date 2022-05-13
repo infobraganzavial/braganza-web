@@ -20,6 +20,7 @@ const SocialNetwork = styled.ul`
     margin: 10px 0;
     flex-wrap: wrap;
     z-index: 1000;
+    padding: 0;
 `
 
 const Menu = styled.ul`
@@ -30,6 +31,7 @@ const Menu = styled.ul`
     margin: 10px 0;
     flex-wrap: wrap;
     z-index: 1000;
+    padding: 0;
 `
 
 const Item = styled.li`
