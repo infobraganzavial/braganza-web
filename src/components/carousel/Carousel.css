@@ -1,4 +1,7 @@
 .swiper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   width: 100%;
   max-height: calc(100vh - 62.66px);
   min-height: calc(100vh - 62.66px);
@@ -14,9 +17,8 @@
 
 .swiper-pagination {
   position: absolute;
-  top: 90%;
+  bottom: 10%;
   z-index: 10;
-  left: 50%;
   display: flex;
 }
 
