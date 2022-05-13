@@ -134,12 +134,12 @@ const ContactBar = () => {
             </ContactBarSection1>
             <ContactBarSection2>
                 <ContactBarIcon>
-                    <Link href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://www.facebook.com/braganzavialsa/?notif_id=1651809278087232&notif_t=aymt_simplified_make_page_post&ref=notif" target="_blank" rel="noopener noreferrer">
                         <ion-icon name="logo-facebook"></ion-icon>
                     </Link>
                 </ContactBarIcon>
                 <ContactBarIcon>
-                    <Link href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://www.instagram.com/braganzavial/" target="_blank" rel="noopener noreferrer">
                         <ion-icon name="logo-instagram"></ion-icon>
                     </Link>
                 </ContactBarIcon>
