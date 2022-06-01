@@ -36,11 +36,11 @@ const Landing = () => {
 			{
 				id: 1,
 				title: 'Sobre nosotros',
-				description: `Braganza Vial SAS es una empresa especializada en la realización de obras de infraestructura y saneamiento, que surge de la necesidad de unir los conocimientos adquiridos por el ingeniero Pablo Sánchez a lo largo de su carrera profesional, en conjunto con la experiencia de Eduardo Joao, quien ha dedicado años de su vida al rubro.
+				description: `Braganza Vial SAS es una empresa especializada en la realización de obras de infraestructura, fundada por el ingeniero Pablo Sánchez y Eduardo Joao, ambos con más de 15 años de experiencia en el rubro.
 
-				A pesar de que nuestra empresa tiene poco tiempo de fundada, el equipo que lo compone cuenta con amplia experiencia en colaboraciones con proyectos de gran envergadura, además de disponer de maquinaria de calidad que permitan la realización de los trabajos de una manera segura y eficiente.
+				Está compuesta por un joven equipo que cuenta con amplia experiencia, y dispone de un extenso parque de maquinaria que permitan la realización de los trabajos de una manera segura y eficiente.
 
-				Cada proyecto para nosotros representa un reto que estamos dispuestos a afrontar con dedicación, siempre mostrando nuestro compromiso en cumplir con las expectativas de nuestros clientes. Nos enfocamos en brindar las mejores soluciones constructivas en base a las necesidades de nuestros clientes, caracterizándonos por nuestra flexibilidad ante cualquier trabajo, apostando siempre al éxito del proyecto, en cuanto a tiempos de construcción y calidad.`,
+				Cada proyecto para nosotros representa un reto que estamos dispuestos a afrontar con dedicación, siempre mostrando nuestro compromiso en cumplir con las expectativas de nuestros clientes. Nos enfocamos en brindar las mejores soluciones constructivas en base a las necesidades particulares, caracterizándonos por nuestra flexibilidad ante cualquier trabajo, apostando siempre al éxito del proyecto, en cuanto a tiempos de construcción y calidad.`,
 			}
 		]
 
@@ -132,26 +132,26 @@ const Landing = () => {
 		{
 			id: 1,
 			principalImage: {
-				url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544324427896/MOVIMIENTO_DE_TIERRA.jpeg',
-			},
-			title:'ALQUILERES DE MAQUINARIA',
-			description: 'Contamos con variedad de equipos dispuestos a ser alquilados para la realización de distintos trabajos y al personal capacitado para su manejo. Entre estos equipos tenemos retroexcavadoras, excavadoras de pala de diferentes capacidades, compactadoras, camiones para carga, entre otros.',
+				url: 'https://cdn.discordapp.com/attachments/967459177339424778/968253339143921794/ALQUILER_6.jpeg',
+			 },
+			 title:'OBRAS DE INFRAESTRUCTURA',
+			 description: 'Nuestra fortaleza son los trabajos referentes a infraestructura: movimiento de suelos, vialidad, redes de agua potable, gas y saneamiento.',
 		},
 		{
 		   id: 2,
 		   principalImage: {
 			   url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544710279178/TOPOGRAFIA.jpeg',
 		   },
-		   title:'CÁLCULO DE VOLUMEN Y RELEVAMIENTO',
-		   description: 'Hacemos relevamientos de superficies, replanteos de información en sitio para seguimiento de proyectos, cálculo de volúmenes de material y estimación de los mismos en base a las especificaciones del proyecto.',
+		   title:'OBRAS DE HORMIGÓN ARMADO',
+		   description: 'Contamos con vasta experiencia en obras de hormigón armado: pavimentos, alcantarillas, plateas de fundación, etc.',
 	   },
 	   {
 		   id: 3,
 		   principalImage: {
-			  url: 'https://cdn.discordapp.com/attachments/967459177339424778/968253339143921794/ALQUILER_6.jpeg',
-		   },
-		   title:'OBRAS DE MOVIMIENTO DE SUELOS E INFRAESTRUCTURA',
-		   description: 'Nuestro fuerte es realizar trabajos referentes a infraestructura, vialidad y de saneamiento. Realizamos trabajos de excavación, compactación de rellenos, demolición, incluyendo el transporte de los mismos desde el lugar de préstamo, o al vertedero.',
+			   url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544324427896/MOVIMIENTO_DE_TIERRA.jpeg',
+			},
+			title:'ALQUILERES DE MAQUINARIA',
+			description: 'Contamos con variedad de equipos con personal capacitado. Entre estos equipos tenemos retroexcavadoras, compactadores, camiones de carga, palas cargadoras, etc.',
 		}
 	];
 

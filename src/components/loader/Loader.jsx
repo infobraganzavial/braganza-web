@@ -21,7 +21,7 @@ const LoaderContainer = styled.div`
 
 const H2 = styled.h2`
     color: ${colors.secundaryColor};
-    font-size: 14vw;
+    font-size: 3vw;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -32,7 +32,7 @@ const H2 = styled.h2`
 
 const Small = styled.small`
     position: relative;
-    font-size: 14vw;
+    font-size: 3vw;
     color: ${colors.lightColor};
     -webkit-text-stroke: 0.3vw ${colors.lightColor};
     text-transform: uppercase;

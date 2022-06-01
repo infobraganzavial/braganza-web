@@ -2,7 +2,14 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-`;
+    position: relative;
+`
+
+const IdDiv = styled.div`
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 103px);
+`
 
 const HexagonWrapper = styled.article`
     position: relative;
@@ -18,17 +25,17 @@ const HexagonWrapper = styled.article`
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    padding: 5rem;
+    padding: 1rem;
     backdrop-filter: grayscale(100%);
 `
 
 const Hexagon = styled.section`
     position: relative;
     width: 30%;
-    min-width: 522px;
+    min-width: 400px;
     height: 400px;
     max-height: max-content;
-    margin: 50px 20px 70px;
+    margin: 0px 5px 40px;
     /* cursor: pointer; */
 
     & ::before {
@@ -101,30 +108,33 @@ const Content = styled.section`
 const OurProjects = ({ourProjects}) => {
 
     return (
-        <Container  id='proyectos'
-                    style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${ourProjects.imageBg.url})`}}>
-            <HexagonWrapper className='projects__hexagon-wrapper'>
-                {ourProjects.content.map( s => {
-                    return (
-                        <Hexagon className='projects__hexagon' key={s.id}>
-                            <Shape className='shape'>
-                                <img src={s.images[0].url} alt="img" />
-                                <Content className='content'>
-                                    <header>
-                                        <h2>{s.title}</h2>
-                                    </header>
-                                    <p>
-                                        {s.service}
-                                    </p>
-                                    <footer>
-                                        {s.alliedCompany}
-                                    </footer>
-                                </Content>
-                            </Shape>
-                        </Hexagon>
-                    )
-                })}
-            </HexagonWrapper>
+        <Container>
+            <IdDiv id='proyectos'></IdDiv>
+            <div  
+                        style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${ourProjects.imageBg.url})`}}>
+                <HexagonWrapper className='projects__hexagon-wrapper'>
+                    {ourProjects.content.map( s => {
+                        return (
+                            <Hexagon className='projects__hexagon' key={s.id}>
+                                <Shape className='shape'>
+                                    <img src={s.images[0].url} alt="img" />
+                                    <Content className='content'>
+                                        <header>
+                                            <h2>{s.title}</h2>
+                                        </header>
+                                        <p>
+                                            {s.service}
+                                        </p>
+                                        <footer>
+                                            {s.alliedCompany}
+                                        </footer>
+                                    </Content>
+                                </Shape>
+                            </Hexagon>
+                        )
+                    })}
+                </HexagonWrapper>
+            </div>
         </Container>
     );
 }
