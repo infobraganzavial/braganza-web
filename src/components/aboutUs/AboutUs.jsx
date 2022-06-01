@@ -3,6 +3,16 @@ import styled from 'styled-components';
 // Theming
 import colors from '../../theming/colors';
 
+const Wrapper = styled.div`
+    position: relative;
+`
+
+const IdDiv = styled.div`
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 102px);
+`
+
 const AboutUsContainer = styled.section`
     position: relative;
     width: 100%;
@@ -78,11 +88,14 @@ const AboutUs = ({aboutUs}) => {
     }
 
     return (
-        <AboutUsContainer   id='sobre-nosotros'
-                            className='about-us__containner'
-                            style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${aboutUs.imageBg.url})`}}>
-            { buildServices() }
-        </AboutUsContainer>
+        <Wrapper>
+            <IdDiv id='sobre-nosotros'></IdDiv>
+            <AboutUsContainer
+                                className='about-us__containner'
+                                style={{ backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${aboutUs.imageBg.url})`}}>
+                { buildServices() }
+            </AboutUsContainer>
+        </Wrapper>
         )
 }
 
