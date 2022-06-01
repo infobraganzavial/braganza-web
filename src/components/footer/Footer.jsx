@@ -121,6 +121,7 @@ const Footer = ({socialNetworks}) => {
                     <HashLinkStyled to='#contacto'>Contacto</HashLinkStyled>
                 </Item>
             </Menu>
+            <Paragraph>Usted imagine el entorno, nosotros lo creamos.</Paragraph>
             <Paragraph>Braganza Vial Ruta 101 Km 23600 | Colonia Nicolich | Departamento Canelones</Paragraph>
     </StyledFooter>
     )
