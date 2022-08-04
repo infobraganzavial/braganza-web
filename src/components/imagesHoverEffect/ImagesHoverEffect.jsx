@@ -1,12 +1,52 @@
 import React from 'react';
+import { useState } from 'react';
 
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const fadeInLeft = keyframes`
+    from {
+        opacity: 0.1;
+    }
+    to {
+        opacity: 1;
+    }
+`
+
+const Toggle = styled.div`
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    z-index: 10;
+    right: 10px;
+    top: 10px;
+    background-color: #fff;
+    display: none;
+    ${({isActive}) => isActive && css`
+        display: flex;
+    `}
+    animation: ${fadeInLeft} .5s;
+`
+
+const DivClip = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    filter: grayscale(100%);
+`
 
 const Wrapper = styled.div`
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: start;
     min-height: calc(100vh - 95px);
+    overflow: hidden;
     /* background: ${({theme}) => theme.primaryColor}; */
 
     & .services__title {
@@ -29,14 +69,6 @@ const Wrapper = styled.div`
     }
 
     & .section__container .clip {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: .5s;
-        filter: grayscale(100%);
-
         &:hover {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             filter: grayscale(0);
@@ -79,20 +111,33 @@ const Wrapper = styled.div`
 `
 
 const ImagesHoverEffect = ({sections}) => {
+
+    const [active, setActive] = useState(false);
+
     const buildSection = () => {
             return sections.map( (c, index) => {
-            return <div key={c.id} className={`clip clip${index + 1}`} style={{ backgroundImage: `url(${c.principalImage.url})` }}>
+            return <DivClip key={c.id} 
+                        className={`clip clip${index + 1}`} 
+                        style={{ backgroundImage: `url(${c.principalImage.url})` }}
+                        onTouchStart={ (e) => setActive(true) }
+                        >
                     <h2 className='services__title'>Nuestros Servicios</h2>
                     <div className='content'>
                         <h2>{c.title}</h2>
                         <p>{c.description}</p>
                     </div>
-                </div>
+                </DivClip>
             })
                     
         }
         return (
             <Wrapper id='nuestros-servicios'>
+            <Toggle
+                onClick={() => setActive(false)}
+                isActive={active}
+            >
+                <i className="fa-solid fa-xmark"></i>
+            </Toggle>
             <div className='section__container'>
                 {buildSection()}
             </div>

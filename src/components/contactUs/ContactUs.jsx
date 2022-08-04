@@ -20,6 +20,7 @@ const FormContainer = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    width: 100%;
 `
 
 const FormWrapper = styled.div`
@@ -35,8 +36,7 @@ const FormWrapper = styled.div`
 const FormCard = styled.div`
     display: flex;
     justify-content: center;
-    width: 40%;
-    min-width: 380px;
+    width: 100%;
     max-width: 590px;
     height: auto;
     background: rgba(255,255,255,0.8);
