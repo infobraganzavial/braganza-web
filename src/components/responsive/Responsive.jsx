@@ -119,12 +119,12 @@ const Responsive = styled.div`
         /* Our Services begins here! */
 
         /* Contact Us begins here! */
-        .form__card--contactUs {
-            min-width: max-content;
-        }
+        
 
         /* Contact Us ends here! */ 
-        
+        .form__container--contactUs {
+            background: linear-gradient(-27deg, rgba(0, 141, 57,.8) 50%, rgba(238, 27, 46,.8) 50%);
+        }
         /* Contact bar begins here! */
         
         .contact-bar__containner {
