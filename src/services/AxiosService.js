@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.URL_API || 'http://localhost:8000/api/';
+const BASE_URL = process.env.URL_API || 'https://braganza-api-env-production.herokuapp.com/api/v1/';
 
 console.log(BASE_URL, "BASE_URL")
 
