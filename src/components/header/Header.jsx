@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
-import { generate as id } from 'shortid';
 
 // Helpers
 import colors from '../../theming/colors';
@@ -179,6 +178,7 @@ const Header = ({items, logo, logo2, logoMobile, search, hashLink = false}) => {
         li.classList.toggle('active-item');
         // toggle al current a
         li.querySelector('a').classList.toggle('active-item');
+        setActive(!active);
     }
 
     /**
@@ -187,8 +187,8 @@ const Header = ({items, logo, logo2, logoMobile, search, hashLink = false}) => {
      * @returns JSX.Element[]
      */
      const buildListSubItems = subItems => {
-        return subItems.map( subItem => {
-            return <li className="menubar__submenu-item" key={id()}>
+        return subItems.map( (subItem, index) => {
+            return <li className="menubar__submenu-item" key={`menubar__submenu-item${index}`}>
                 <Link className="menubar__menuitem-link" to={subItem.routerLink}>
                     {subItem.label}
                 </Link>
@@ -214,14 +214,14 @@ const Header = ({items, logo, logo2, logoMobile, search, hashLink = false}) => {
                 return <li className='menubar__menu-item menubar__parent-sub-menu-item'
                            onClick={() => handleOnClick(myRef)}
                            ref={myRef}
-                           key={id()}>
+                           key={`menubar__menu-item${index}`}>
                     {!hashLink && <Link className='menubar__menuitem-link' to="/">
                         {item.label}
                     </Link>}
                     {buildUlSubItems(item.items)}
                 </li>
             } else {
-                return <li className="menubar__menu-item" key={id()} onClick={() => handleOnClick(myRef)} ref={myRef}>
+                return <li className="menubar__menu-item" key={`menubar__menu-item${index}`} onClick={() => handleOnClick(myRef)} ref={myRef}>
                     {!hashLink && <Link className="menubar__menuitem-link" to={item.routerLink}>
                         {item.label}
                     </Link>}

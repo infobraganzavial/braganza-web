@@ -23,7 +23,7 @@ const ContactBarContainer = styled.aside`
     height: 40px;
     box-sizing: border-box;
     background: #000;
-    z-index: 20;
+    z-index: 1010;
     color: #dedede;
 `
 const ContactBarSection1 = styled.section`
