@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 // Components
@@ -8,6 +9,7 @@ import Landing from './pages/landing/Landing';
 
 // Theming
 import colors from './theming/colors.js';
+import 'react-toastify/dist/ReactToastify.css';
 
 const GlobalStyle = createGlobalStyle`
 `
@@ -24,6 +26,14 @@ function App() {
             </Route>
           </Routes>
         </Router>
+        <ToastContainer
+            position= "top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            closeOnClick={true}
+            pauseOnHover={true}
+            draggable={true}
+          />
       </ThemeProvider>
     </>
   );

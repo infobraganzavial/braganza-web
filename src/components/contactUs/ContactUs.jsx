@@ -1,20 +1,18 @@
 import { useState } from "react";
+import { toast } from 'react-toastify';
 import styled from 'styled-components';
 
 // Presentational Component
 import Form from "../../components/form/Form";
 // import Dialog from "../../components/dialog/Dialog";
 import Loader from "../../components/loader/Loader";
-
-// Theming
-import colors from '../../theming/colors.js';
+import constans from "../../helpers/constans";
 
 // Services
-// import { ContactUsService } from "../../services/api/CountryService";
+import { ContactUsService as _contactUsService } from "../../services/ContactUs";
 
 const FormContainer = styled.div`
     min-height: calc(100vh - 100px);
-    /* background: linear-gradient(-27deg, ${colors.secundaryColorRgba} 50%, ${colors.primaryColorRgba} 50%); */
     background-image: url('/assets/contactus/firm-handshake.jpg');
     background-position: center;
     background-size: cover;
@@ -50,33 +48,16 @@ const ContactUs = () => {
 
     const [loading, setLoading] = useState(false);
 
-    // const showToast = useRef(null);
-    // let timer;
-
     const handleSubmit = async e => {
         setLoading(true);
-        // try{
-        //     setLoading(true);
-        //     const response = await ContactUsService.contactUs(e);
-
-        //     // Respuesta Ok
-        //     if(response && response.data && !response.err) {
-        //         showToast.current('success', 'Éxito', 'Se ha registrado el usuario exitosamente, se envio un email a su correo para verificación', 5000);
-        //         // Navegamos a login
-        //         timer = setTimeout(() => {
-        //             setLoading(false);
-        //             navigate('/ingresar');
-        //         },7000);
-
-        //         return () => clearTimeout(timer);
-        //     }
-        //     else showToast.current('error', 'Error Message', 'No se pudo crear el usuario', 3000);
-        // } catch(err) {
-        //     setLoading(false);
-        //     const {response} = err;
-        //     if(response && response.data && response.data.data && response.data.data.length)
-        //         showToast.current('error', 'Error Message', response.data.data, 3000);
-        // }
+        try{
+            const response = await _contactUsService.contactUs(e);
+            // Respuesta Ok
+            if(response?.data?.data) toast.success(constans.messages.success);
+            setLoading(false);
+        } catch(err) {
+            setLoading(false);
+        }
     };
     
     const handleChange = e => console.log(e);
@@ -134,15 +115,7 @@ const ContactUs = () => {
         }
     ];
 
-    if(loading) return (
-        <>
-        <Loader />
-        {/* <Dialog 
-                position='bottom-left'
-                showToast={showToast}
-                /> */}
-        </>
-    );
+    if(loading) return <Loader />;
 
     return (
         <FormContainer  id="contacto"
@@ -156,10 +129,6 @@ const ContactUs = () => {
                         handleSubmitForm={handleSubmit} 
                         title='Contacto' 
                     />
-                    {/* <Dialog 
-                            position='bottom-left'
-                            showToast={showToast}
-                            /> */}
                 </FormCard>
             </FormWrapper>
         </FormContainer>
