@@ -3,7 +3,8 @@ const constans = {
         contactUs : 'form-contact/send-email'
     },
     messages : {
-        success : 'Se envió su solicitud con éxito'
+        success : 'Solicitud enviada exitosamente.',
+        error   : 'No se pudo enviar su solicitud.'
     }
 }
 
