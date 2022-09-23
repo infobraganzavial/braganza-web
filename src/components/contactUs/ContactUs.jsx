@@ -54,9 +54,11 @@ const ContactUs = () => {
             const response = await _contactUsService.contactUs(e);
             // Respuesta Ok
             if(response?.data?.data) toast.success(constans.messages.success);
+            else toast.error(constans.messages.error);
             setLoading(false);
         } catch(err) {
             setLoading(false);
+            toast.error(constans.messages.error);
         }
     };
     
