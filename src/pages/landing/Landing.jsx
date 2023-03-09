@@ -36,10 +36,10 @@ const Landing = () => {
 			{
 				id: 1,
 				title: 'Sobre nosotros',
-				description: `Braganza Vial SAS es una empresa especializada en la realización de obras de infraestructura, fundada por el ingeniero Pablo Sánchez y Eduardo Joao, ambos con más de 15 años de experiencia en el rubro.
+				description: `Braganza Vial SAS es una empresa especializada en la realización de obras de infraestructura, fundada por Eduardo Joao, con más de 15 años de experiencia en el rubro.
 
 				Está compuesta por un joven equipo que cuenta con amplia experiencia, y dispone de un extenso parque de maquinaria que permitan la realización de los trabajos de una manera segura y eficiente.
-
+				
 				Cada proyecto para nosotros representa un reto que estamos dispuestos a afrontar con dedicación, siempre mostrando nuestro compromiso en cumplir con las expectativas de nuestros clientes. Nos enfocamos en brindar las mejores soluciones constructivas en base a las necesidades particulares, caracterizándonos por nuestra flexibilidad ante cualquier trabajo, apostando siempre al éxito del proyecto, en cuanto a tiempos de construcción y calidad.`,
 			}
 		]
@@ -165,8 +165,5 @@ const Landing = () => {
 		</>
 	);
 }
-
-
-
 
 export default Landing;
