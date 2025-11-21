@@ -17,7 +17,7 @@ const FormContainer = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-attachment: scroll; */
   width: 100%;
 `;
 
