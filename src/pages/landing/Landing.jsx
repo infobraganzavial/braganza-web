@@ -1,169 +1,216 @@
-import React from 'react';
+import React from "react";
 
 // Components
-import Carousel from '../../components/carousel/Carousel';
-import ContactUs from '../../components/contactUs/ContactUs';
-import AboutUs from '../../components/aboutUs/AboutUs';
-import OurProjects from '../../components/ourProjects/OutProjects';
-import ImagesHoverEffect from '../../components/imagesHoverEffect/ImagesHoverEffect';
+import Carousel from "../../components/carousel/Carousel";
+import ContactUs from "../../components/contactUs/ContactUs";
+import AboutUs from "../../components/aboutUs/AboutUs";
+import OurProjects from "../../components/ourProjects/OutProjects";
+import ImagesHoverEffect from "../../components/imagesHoverEffect/ImagesHoverEffect";
 
 const Landing = () => {
+  const slideImages = [
+    {
+      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750178/BERKER_-_Plataformas_etugux.webp",
+    },
+    {
+      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750280/BERKER_-_Excavaciones_-_Vial_hnepgf.webp",
+    },
+    {
+      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750281/BERKER_-_Movimiento_de_Suelos_-_Sistema_Vial_sohyw9.webp",
+    },
+    {
+      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750284/BERKER_Ecavaciones_Infraestructura_xnqmyo.webp",
+    },
+    {
+      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750283/CERRO_COLORADO_-_Lagunas_de_Tratamiento_ohipzw.webp",
+    },
+  ];
 
-	const slideImages = [
-        {
-            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968260441711190107/MOVIMIENTO_DE_TIERRA_EN_FACULTAD_DE_VERTERINARIA.jpeg',
-        },
-        {
-            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186667636777060/2.jpeg',
-        },
-        {
-            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968256862061490286/3.jpeg',
-        },
-        {
-            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968253673014693989/alquileres.jpeg',
-        },
-        {
-            url: 'https://cdn.discordapp.com/attachments/967459177339424778/968186668718891038/5.jpeg',
-        },
-    ];
-
-	const aboutUs ={
-		imageBg : {
-			id: 1,
-			url: 'https://cdn.discordapp.com/attachments/967459177339424778/968694977070760027/NOSOTROS_3.jpeg'
-		},
-		content: [
-			{
-				id: 1,
-				title: 'Sobre nosotros',
-				description: `Braganza Vial SAS es una empresa especializada en la realización de obras de infraestructura, fundada por Eduardo Joao, con más de 15 años de experiencia en el rubro.
+  const aboutUs = {
+    imageBg: {
+      id: 1,
+      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750657/CONAPROLE_-_Excavaciones_-_Pavimentos_ckig8o.webp",
+    },
+    content: [
+      {
+        id: 1,
+        title: "Sobre nosotros",
+        description: `Braganza Vial SAS es una empresa especializada en la realización de obras de infraestructura, fundada por Eduardo Joao, con más de 15 años de experiencia en el rubro.
 
 				Está compuesta por un joven equipo que cuenta con amplia experiencia, y dispone de un extenso parque de maquinaria que permitan la realización de los trabajos de una manera segura y eficiente.
 				
 				Cada proyecto para nosotros representa un reto que estamos dispuestos a afrontar con dedicación, siempre mostrando nuestro compromiso en cumplir con las expectativas de nuestros clientes. Nos enfocamos en brindar las mejores soluciones constructivas en base a las necesidades particulares, caracterizándonos por nuestra flexibilidad ante cualquier trabajo, apostando siempre al éxito del proyecto, en cuanto a tiempos de construcción y calidad.`,
-			}
-		]
+      },
+    ],
+  };
 
-	} 
+  const ourProjects = {
+    imageBg: {
+      id: 1,
+      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763751268/CONAPROLE_-_Movimiento_de_Suelos_-_Plataformas_bfjbks.webp",
+    },
+    content: [
+      {
+        id: 1,
+        title: "Plataforma para galpones en Ruta 101 Km 24",
+        service: "",
+        images: [
+          {
+            id: 1,
+            url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763751272/MEVIR_-_Cerrillos_-_Muro_Hormig%C3%B3n_Armado_idpnqg.webp",
+          },
+        ],
+        alliedCompany: "Lavalleja, Marzo - Junio  2021",
+      },
+      {
+        id: 2,
+        title: "Saneamiento. Tendido de PEAD cruce CCFC.",
+        service: "",
+        images: [
+          {
+            id: 1,
+            url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763751273/MEVIR_-_Cerrillos_Movimiento_de_Suelos_-_Plataformas_tbu7zx.webp",
+          },
+        ],
+        alliedCompany: "Canelones, Junio - Agosto 2021",
+      },
+      {
+        id: 3,
+        title:
+          "Licitación Pública Nacional 02/2020: Pavimentación circuito “Vejigas- Barrancas”",
+        service: "",
+        images: [
+          {
+            id: 1,
+            url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763751270/MEVIR_-_Caraguat%C3%A1_-_Excavaciones_-_Alcantarillas_-_Hrmigones_qrfvg8.webp",
+          },
+        ],
+        alliedCompany: "Lavalleja, Marzo - Junio  2021",
+      },
+      {
+        id: 4,
+        title:
+          "UPM2 - Realización de dique impermeable en arcilla, revestido en piedra.",
+        service: "",
+        images: [
+          {
+            id: 1,
+            url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763751275/MEVIR_-_Cerrillos_-_Conformaci%C3%B3n_Plataformas_c737fy.webp",
+          },
+        ],
+        alliedCompany: "Paso de los Toros, Agosto 2021",
+      },
+      {
+        id: 5,
+        title:
+          "UPM2 - Movimiento de piedra y explosión de piedra con martillo hidráulico.",
+        service: "",
+        images: [
+          {
+            id: 1,
+            url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763751277/MEVIR_-_Cerrillos_Conformaci%C3%B3n_Plataformas_owf4l8.webp",
+          },
+        ],
+        alliedCompany: "Paso de los Toros, Agosto 2021",
+      },
+      {
+        id: 6,
+        title: "UPM2 - Excavación y nivelación para caño de pead de 1500.",
+        service: "",
+        images: [
+          {
+            id: 1,
+            url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763751492/MEVIR_-_Cerrillos_Movimiento_de_Suelos_-_Plataformas_kctzp9.webp",
+          },
+        ],
+        alliedCompany: "Paso de los Toros, Agosto 2021",
+      },
+    ],
+  };
 
-	const ourProjects ={
-		imageBg : {
-			id: 1,
-			url: 'https://cdn.discordapp.com/attachments/967459177339424778/968267304355913748/WhatsApp_Image_2022-04-25_at_6.43.22_PM.jpeg'
-		},
-		content: [
-			{
-				id: 1,
-				title: 'Plataforma para galpones en Ruta 101 Km 24',
-				service: '',
-				images : [
-					{
-						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573908607893565/CHERDIL.jpeg'
-					}
-				],
-				alliedCompany: 'Lavalleja, Marzo - Junio  2021'
-			},
-			{
-				id: 2,
-				title: 'Saneamiento. Tendido de PEAD cruce CCFC.',
-				service: '',
-				images : [
-					{
-						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/967459177339424778/968695458530730094/GEOFINAL.jpeg'
-					}
-				],
-				alliedCompany: 'Canelones, Junio - Agosto 2021'
-			},
-			{
-				id: 3,
-				title: 'Licitación Pública Nacional 02/2020: Pavimentación circuito “Vejigas- Barrancas”',
-				service: '',
-				images : [
-					{
-						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573909039902780/OSUSA.jpeg'
-					}
-				],
-				alliedCompany: 'Lavalleja, Marzo - Junio  2021'
-			},
-			{
-				id: 4,
-				title: 'UPM2 - Realización de dique impermeable en arcilla, revestido en piedra.',
-				service: '',
-				images : [
-					{
-						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573909287346227/UPM2_-_DIQUE.jpeg'
-					}
-				],
-				alliedCompany: 'Paso de los Toros, Agosto 2021'
-			},
-			{
-				id: 5,
-				title: 'UPM2 - Movimiento de piedra y explosión de piedra con martillo hidráulico.',
-				service: '',
-				images : [
-					{
-						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/967459177339424778/967573909547397181/UPM2_-_EXPLOSION_PIEDRA.jpeg'
-					}
-				],
-				alliedCompany: 'Paso de los Toros, Agosto 2021'
-			},
-			{
-				id: 6,
-				title: 'UPM2 - Excavación y nivelación para caño de pead de 1500.',
-				service: '',
-				images : [
-					{
-						id: 1,
-						url: 'https://cdn.discordapp.com/attachments/967459177339424778/968695458799173703/UPM2_-_NIVELACION.jpeg'
-					}
-				],
-				alliedCompany: 'Paso de los Toros, Agosto 2021'
-			},
-		]
+  const sections = [
+    {
+      id: 1,
+      principalImage: {
+        url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750541/CERRO_COLORDO_Lagunas_de_Tratamiento_wmyi4n.webp",
+      },
+      title: "OBRAS DE INFRAESTRUCTURA",
+      description: (
+        <>
+          En Braganza Vial nuestra fortaleza es la cercanía con los clientes, el
+          compromiso con un trabajo eficiente y de calidad.
+          <br />
+          <br />
+          Nos especializamos en:
+          <ul>
+            <li>Movimiento de suelos</li>
+            <li>Vialidad</li>
+            <li>Redes de saneamiento</li>
+            <li>Redes de Agua potable</li>
+            <li>Redes de Gas</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      id: 2,
+      principalImage: {
+        url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750541/MEVIR_-_Cerrillos_-_Muro_Hormig%C3%B3n_Armado_embrwo.webp",
+      },
+      title: "OBRAS DE HORMIGÓN ARMADO",
+      description: (
+        <>
+          Contamos con una amplia trayectoria en la ejecución de obras de
+          hormigón armado, aplicando controles de calidad rigurosos en cada
+          etapa.
+          <br />
+          <br />
+          Realizamos:
+          <ul>
+            <li>Pavimentos</li>
+            <li>Alcantarillado</li>
+            <li>Plateas de fundación</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      id: 3,
+      principalImage: {
+        url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750539/CONAPROLE_-_Movimiento_de_Suelos_otri48.webp",
+      },
+      title: "ALQUILERES DE MAQUINARIA",
+      description: (
+        <>
+          Brindamos un servicio integral de alquiler de maquinaria con:
+          <br />
+          <br />
+          <ul>
+            <li>Personal idóneo y capacitado</li>
+            <li>Equipos modernos y seguros, entre ellos:</li>
+            <ul>
+              <li>Excavadoras</li>
+              <li>Retroexcavadoras</li>
+              <li>Cilindros compactadores</li>
+              <li>Autocargador de hormigón</li>
+              <li>Camiones cargadores</li>
+              <li>Motoniveladoras</li>
+            </ul>
+          </ul>
+        </>
+      ),
+    },
+  ];
 
-	} 
-
-	const sections = [
-		{
-			id: 1,
-			principalImage: {
-				url: 'https://cdn.discordapp.com/attachments/967459177339424778/968253339143921794/ALQUILER_6.jpeg',
-			 },
-			 title:'OBRAS DE INFRAESTRUCTURA',
-			 description: 'Nuestra fortaleza son los trabajos referentes a infraestructura: movimiento de suelos, vialidad, redes de agua potable, gas y saneamiento.',
-		},
-		{
-		   id: 2,
-		   principalImage: {
-			   url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544710279178/TOPOGRAFIA.jpeg',
-		   },
-		   title:'OBRAS DE HORMIGÓN ARMADO',
-		   description: 'Contamos con vasta experiencia en obras de hormigón armado: pavimentos, alcantarillas, plateas de fundación, etc.',
-	   },
-	   {
-		   id: 3,
-		   principalImage: {
-			   url: 'https://cdn.discordapp.com/attachments/967459177339424778/968236544324427896/MOVIMIENTO_DE_TIERRA.jpeg',
-			},
-			title:'ALQUILERES DE MAQUINARIA',
-			description: 'Contamos con variedad de equipos con personal capacitado. Entre estos equipos tenemos retroexcavadoras, compactadores, camiones de carga, palas cargadoras, etc.',
-		}
-	];
-
-	return (
-		<>
-			<Carousel slideImages={slideImages} />
-			<ImagesHoverEffect sections={sections} />
-			<AboutUs aboutUs={aboutUs}/>
-			<OurProjects ourProjects={ourProjects}/>
-			<ContactUs/>
-		</>
-	);
-}
+  return (
+    <>
+      <Carousel slideImages={slideImages} />
+      <ImagesHoverEffect sections={sections} />
+      <AboutUs aboutUs={aboutUs} />
+      <OurProjects ourProjects={ourProjects} />
+      <ContactUs />
+    </>
+  );
+};
 
 export default Landing;
