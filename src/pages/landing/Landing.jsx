@@ -47,7 +47,7 @@ const Landing = () => {
   const ourProjects = {
     imageBg: {
       id: 1,
-      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763751268/CONAPROLE_-_Movimiento_de_Suelos_-_Plataformas_bfjbks.webp",
+      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763752659/CONAPROLE_-_Movimiento_de_Suelos_-_Plataformas_gpkidm.webp",
     },
     content: [
       {
