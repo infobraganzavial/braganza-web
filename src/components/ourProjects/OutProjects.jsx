@@ -23,7 +23,7 @@ const HexagonWrapper = styled.article`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   padding: 1rem;
   backdrop-filter: grayscale(100%);
 `;
@@ -121,7 +121,7 @@ const OurProjects = ({ ourProjects }) => {
             return (
               <Hexagon className="projects__hexagon" key={s.id}>
                 <Shape className="shape">
-                  <img src={s.images[0].url} alt="img" />
+                  <img src={s.images[0].url} alt="img" loading="lazy" />
                   <Content className="content">
                     <header>
                       <h2>{s.title}</h2>

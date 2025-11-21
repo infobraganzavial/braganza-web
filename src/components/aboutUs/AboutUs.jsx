@@ -21,7 +21,7 @@ const AboutUsContainer = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  /* background-attachment: scroll; */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
