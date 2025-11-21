@@ -29,7 +29,7 @@ const Landing = () => {
   const aboutUs = {
     imageBg: {
       id: 1,
-      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750657/CONAPROLE_-_Excavaciones_-_Pavimentos_ckig8o.webp",
+      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763752120/CONAPROLE_-_Excavaciones_-_Pavimentos_sj7rgt.webp",
     },
     content: [
       {
