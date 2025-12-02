@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // Components
 import Carousel from "../../components/carousel/Carousel";
@@ -6,43 +6,92 @@ import ContactUs from "../../components/contactUs/ContactUs";
 import AboutUs from "../../components/aboutUs/AboutUs";
 import OurProjects from "../../components/ourProjects/OutProjects";
 import ImagesHoverEffect from "../../components/imagesHoverEffect/ImagesHoverEffect";
+import { getCarousel } from "../../services/Carousel";
+import { getServices } from "../../services/Services";
+import { getAboutUs } from "../../services/AboutUs";
 
 const Landing = () => {
-  const slideImages = [
-    {
-      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750178/BERKER_-_Plataformas_etugux.webp",
-    },
-    {
-      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750280/BERKER_-_Excavaciones_-_Vial_hnepgf.webp",
-    },
-    {
-      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750281/BERKER_-_Movimiento_de_Suelos_-_Sistema_Vial_sohyw9.webp",
-    },
-    {
-      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750284/BERKER_Ecavaciones_Infraestructura_xnqmyo.webp",
-    },
-    {
-      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750283/CERRO_COLORADO_-_Lagunas_de_Tratamiento_ohipzw.webp",
-    },
-  ];
+  const [slideImages, setSlideImages] = useState([]);
+  const [services, setServices] = useState([]);
+  const [aboutUs, setAboutUs] = useState(null);
 
-  const aboutUs = {
-    imageBg: {
-      id: 1,
-      url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763752120/CONAPROLE_-_Excavaciones_-_Pavimentos_sj7rgt.webp",
-    },
-    content: [
-      {
-        id: 1,
-        title: "Sobre nosotros",
-        description: `Braganza Vial SAS es una empresa especializada en la realización de obras de infraestructura, fundada por Eduardo Joao, con más de 15 años de experiencia en el rubro.
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-				Está compuesta por un joven equipo que cuenta con amplia experiencia, y dispone de un extenso parque de maquinaria que permitan la realización de los trabajos de una manera segura y eficiente.
-				
-				Cada proyecto para nosotros representa un reto que estamos dispuestos a afrontar con dedicación, siempre mostrando nuestro compromiso en cumplir con las expectativas de nuestros clientes. Nos enfocamos en brindar las mejores soluciones constructivas en base a las necesidades particulares, caracterizándonos por nuestra flexibilidad ante cualquier trabajo, apostando siempre al éxito del proyecto, en cuanto a tiempos de construcción y calidad.`,
-      },
-    ],
-  };
+  useEffect(() => {
+    getCarousel()
+      .then((data) => {
+        setSlideImages(data.images);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    getServices()
+      .then((data) => {
+        setServices(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    getAboutUs()
+      .then((data) => {
+        setAboutUs(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
+  console.log("aboutUs in Landing component:", aboutUs);
+
+  // const aboutUs = {
+  //   imageBg: {
+  //     id: 1,
+  //     url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763752120/CONAPROLE_-_Excavaciones_-_Pavimentos_sj7rgt.webp",
+  //   },
+  //   content: [
+  //     {
+  //       id: 1,
+  //       title: "SOBRE NOSOTROS",
+  //       description: (
+  //         <>
+  //           <p>
+  //             Braganza Vial SAS es una empresa especializada en la realización
+  //             de obras de infraestructura, fundada por Eduardo Joao, con más de
+  //             15 años de experiencia en el rubro.
+  //           </p>
+  //           <p>
+  //             Está compuesta por un joven equipo que cuenta con amplia
+  //             experiencia, y dispone de un extenso parque de maquinaria que
+  //             permitan la realización de los trabajos de una manera segura y
+  //             eficiente.
+  //           </p>
+  //           <p>
+  //             Cada proyecto para nosotros representa un reto que estamos
+  //             dispuestos a afrontar con dedicación, siempre mostrando nuestro
+  //             compromiso en cumplir con las expectativas de nuestros clientes.
+  //             Nos enfocamos en brindar las mejores soluciones constructivas en
+  //             base a las necesidades particulares, caracterizándonos por nuestra
+  //             flexibilidad ante cualquier trabajo, apostando siempre al éxito
+  //             del proyecto, en cuanto a tiempos de construcción y calidad.
+  //           </p>
+  //         </>
+  //       ),
+  //     },
+  //   ],
+  // };
 
   const ourProjects = {
     imageBg: {
@@ -128,84 +177,10 @@ const Landing = () => {
     ],
   };
 
-  const sections = [
-    {
-      id: 1,
-      principalImage: {
-        url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750541/CERRO_COLORDO_Lagunas_de_Tratamiento_wmyi4n.webp",
-      },
-      title: "OBRAS DE INFRAESTRUCTURA",
-      description: (
-        <>
-          En Braganza Vial nuestra fortaleza es la cercanía con los clientes, el
-          compromiso con un trabajo eficiente y de calidad.
-          <br />
-          <br />
-          Nos especializamos en:
-          <ul>
-            <li>Movimiento de suelos</li>
-            <li>Vialidad</li>
-            <li>Redes de saneamiento</li>
-            <li>Redes de Agua potable</li>
-            <li>Redes de Gas</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      id: 2,
-      principalImage: {
-        url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750541/MEVIR_-_Cerrillos_-_Muro_Hormig%C3%B3n_Armado_embrwo.webp",
-      },
-      title: "OBRAS DE HORMIGÓN ARMADO",
-      description: (
-        <>
-          Contamos con una amplia trayectoria en la ejecución de obras de
-          hormigón armado, aplicando controles de calidad rigurosos en cada
-          etapa.
-          <br />
-          <br />
-          Realizamos:
-          <ul>
-            <li>Pavimentos</li>
-            <li>Alcantarillado</li>
-            <li>Plateas de fundación</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      id: 3,
-      principalImage: {
-        url: "https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750539/CONAPROLE_-_Movimiento_de_Suelos_otri48.webp",
-      },
-      title: "ALQUILERES DE MAQUINARIA",
-      description: (
-        <>
-          Brindamos un servicio integral de alquiler de maquinaria con:
-          <br />
-          <br />
-          <ul>
-            <li>Personal idóneo y capacitado</li>
-            <li>Equipos modernos y seguros, entre ellos:</li>
-            <ul>
-              <li>Excavadoras</li>
-              <li>Retroexcavadoras</li>
-              <li>Cilindros compactadores</li>
-              <li>Autocargador de hormigón</li>
-              <li>Camiones cargadores</li>
-              <li>Motoniveladoras</li>
-            </ul>
-          </ul>
-        </>
-      ),
-    },
-  ];
-
   return (
     <>
       <Carousel slideImages={slideImages} />
-      <ImagesHoverEffect sections={sections} />
+      <ImagesHoverEffect sections={services} />
       <AboutUs aboutUs={aboutUs} />
       <OurProjects ourProjects={ourProjects} />
       <ContactUs />

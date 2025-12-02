@@ -115,24 +115,50 @@ const Wrapper = styled.div`
 const ImagesHoverEffect = ({ sections }) => {
   const [active, setActive] = useState(false);
 
+  const renderDescription = (description) => {
+    if (!Array.isArray(description)) return null;
+
+    return description.map((block, index) => {
+      switch (block.type) {
+        case "paragraph":
+          return (
+            <p key={index}>{block.children.map((child, i) => child.text)}</p>
+          );
+
+        case "list":
+          return (
+            <ul key={index}>
+              {block.children.map((item, i) => (
+                <li key={i}>{item.children.map((child, j) => child.text)}</li>
+              ))}
+            </ul>
+          );
+
+        default:
+          return null;
+      }
+    });
+  };
+
   const buildSection = () => {
-    return sections.map((c, index) => {
+    return sections.map((section, index) => {
       return (
         <DivClip
-          key={c.id}
+          key={index}
           className={`clip clip${index + 1}`}
-          style={{ backgroundImage: `url(${c.principalImage.url})` }}
+          style={{ backgroundImage: `url(${section.image})` }}
           onTouchStart={(e) => setActive(true)}
         >
           <h2 className="services__title">Nuestros Servicios</h2>
           <div className="content">
-            <h2>{c.title}</h2>
-            <p>{c.description}</p>
+            <h2>{section.title}</h2>
+            <div>{renderDescription(section.description)}</div>
           </div>
         </DivClip>
       );
     });
   };
+
   return (
     <Wrapper id="nuestros-servicios">
       <Toggle onClick={() => setActive(false)} isActive={active}>
@@ -140,9 +166,9 @@ const ImagesHoverEffect = ({ sections }) => {
       </Toggle>
       <div
         className="section__container"
-        style={{
-          backgroundImage: `url(https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750986/firm-handshake_rzw1ya.webp)`,
-        }}
+        // style={{
+        //   backgroundImage: `url(https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750986/firm-handshake_rzw1ya.webp)`,
+        // }}
       >
         {buildSection()}
       </div>
