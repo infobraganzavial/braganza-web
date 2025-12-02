@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 // Theming
 import colors from "../../theming/colors";
+import renderDescription from "../../helpers/rich-text";
 
 const Wrapper = styled.div`
   position: relative;
@@ -73,33 +74,34 @@ const Info = styled.section`
   & h2,
   p {
     font-size: 1rem;
-    text-transform: uppercase;
     text-align: center;
     white-space: pre-line;
+  }
+
+  & p {
+    text-indent: 3em;
   }
 
   & h2 {
     font-size: 1.5rem;
     color: ${colors.primaryColor};
+    text-transform: uppercase;
   }
 `;
 
 const AboutUs = ({ aboutUs }) => {
+  if (!aboutUs) return null;
   const buildServices = () => {
     return (
       <Service className="aboutus__service">
-        {aboutUs.content.map((s) => {
-          return (
-            <Info
-              className="aboutus__info"
-              key={s.id}
-              length={aboutUs.content.length}
-            >
-              <h2>{s.title}</h2>
-              <p>{s.description}</p>
-            </Info>
-          );
-        })}
+        <Info
+          className="aboutus__info"
+          key={aboutUs.title}
+          length={aboutUs.description.length}
+        >
+          <h2>{aboutUs.title}</h2>
+          {renderDescription(aboutUs.description)}
+        </Info>
       </Service>
     );
   };
@@ -110,15 +112,14 @@ const AboutUs = ({ aboutUs }) => {
       <AboutUsContainer
         className="about-us__containner"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${aboutUs.imageBg.url})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${aboutUs.background.url})`,
         }}
       >
         {buildServices()}
 
         <ImageISO
           style={{
-            backgroundImage:
-              "url(https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750820/iso_zspavg.webp)",
+            backgroundImage: `url(${aboutUs.certificateISO.url})`,
           }}
         />
       </AboutUsContainer>
