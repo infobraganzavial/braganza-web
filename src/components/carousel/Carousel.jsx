@@ -18,8 +18,6 @@ const Carousel = ({ slideImages }) => {
 
   let sw;
 
-  console.log("slideImages:", slideImages);
-
   /**
    * @description Cargar SwiperSlide.
    * @returns void

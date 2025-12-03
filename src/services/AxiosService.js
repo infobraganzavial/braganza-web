@@ -3,8 +3,6 @@ import axios from "axios";
 // const BASE_URL = process.env.URL_API || "https://braganza-api.onrender.com/";
 const BASE_URL = process.env.URL_API || "http://localhost:3000/";
 
-console.log(BASE_URL, "BASE_URL");
-
 const api = axios.create({
   baseURL: BASE_URL + "api/v1/",
 });

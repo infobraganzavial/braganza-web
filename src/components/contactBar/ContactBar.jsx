@@ -95,8 +95,6 @@ const ContactBarLink = styled.a`
   }
 `;
 
-const API_URL = process.env.REACT_APP_URL_API;
-
 const ContactBar = () => {
   const [contact, setContact] = useState(null);
   const [contactSocialNetwork, setContactSocialNetwork] = useState([]);
