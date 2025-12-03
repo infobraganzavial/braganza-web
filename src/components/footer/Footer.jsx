@@ -1,130 +1,181 @@
-import styled from 'styled-components';
-import { HashLink } from 'react-router-hash-link';
+import styled from "styled-components";
+import { HashLink } from "react-router-hash-link";
+import { useEffect, useState } from "react";
+import { getFooter, getSocialNetworks } from "../../services/Footer";
 
 const StyledFooter = styled.footer`
-    position: relative;
-    width: 100%;
-    background: #008d39;
-    min-height: 100px;
-    padding: 20px 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`
+  position: relative;
+  width: 100%;
+  background: #008d39;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
 const SocialNetwork = styled.ul`
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
-    z-index: 1000;
-    padding: 0;
-`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  z-index: 1000;
+  padding: 0;
+`;
 
 const Menu = styled.ul`
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
-    z-index: 1000;
-    padding: 0;
-`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  z-index: 1000;
+  padding: 0;
+`;
 
 const Item = styled.li`
-    list-style: none;
-`
+  list-style: none;
+`;
 
 const Link = styled.a`
-    font-size: 2em;
-    color: #fff;
-    margin: 0 10px;
-    display: inline-block;
-    transition: .5s;
+  font-size: 2em;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
 
-    &:hover {
-        color: #fff;
-        transform: translateY(-10px);
-    }
-`
+  &:hover {
+    color: #fff;
+    transform: translateY(-10px);
+  }
+`;
 
 const HashLinkStyled = styled(HashLink)`
-    font-size: 1.2em;
-    color: #fff;
-    margin: 0 10px;
-    display: inline-block;
-    transition: .5s;
-    text-decoration: none;
-    opacity: 0.75;
+  font-size: 1.2em;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
 
-    &:hover {
-        color: #fff;
-        opacity: 1;
-    }
-`
+  &:hover {
+    color: #fff;
+    opacity: 1;
+  }
+`;
 
 const Paragraph = styled.p`
-    color: #fff;
-    text-align: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-`
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+`;
 
-const Footer = ({socialNetworks}) => {
-    return (
-        <StyledFooter>
-            <div className="waves">
-                <div className="wave" id="wave1"></div>
-                <div className="wave" id="wave2"></div>
-                <div className="wave" id="wave3"></div>
-                <div className="wave" id="wave4"></div>
-            </div>
-            <SocialNetwork className="social_icon">
-                <Item>
-                    <Link 
-                            href="https://www.facebook.com/braganzavialsa/?notif_id=1651809278087232&notif_t=aymt_simplified_make_page_post&ref=notif" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            >
-                        <ion-icon name="logo-facebook"></ion-icon>
-                    </Link>
-                </Item>
-                <Item>
-                    <Link href="https://wa.me/+59898998465?text=Estoy%20interesado%20en%20contactarlos" target="_blank" rel="noopener noreferrer">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                    </Link>
-                </Item>
-                <Item>
-                    <Link href="https://www.instagram.com/braganzavial/" target="_blank" rel="noopener noreferrer">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                    </Link>
-                </Item>
-            </SocialNetwork>
-            <Menu className="menu">
-                <Item>
-                    <HashLinkStyled to='#inicio'>Inicio</HashLinkStyled>
-                </Item>
-                <Item>
-                    <HashLinkStyled to='#nuestros-servicios'>Servicios</HashLinkStyled>
-                </Item>
-                <Item>
-                    <HashLinkStyled to='#sobre-nosotros'>Nosotros</HashLinkStyled>
-                </Item>
-                <Item>
-                    <HashLinkStyled to='#proyectos'>Proyectos</HashLinkStyled>
-                </Item>
-                <Item>
-                    <HashLinkStyled to='#contacto'>Contacto</HashLinkStyled>
-                </Item>
-            </Menu>
-            <Paragraph>Usted imagine el entorno, nosotros lo creamos.</Paragraph>
-            <Paragraph>Braganza Vial Ruta 101 Km 23600 | Colonia Nicolich | Departamento Canelones</Paragraph>
+const Footer = () => {
+  const [footerData, setFooterData] = useState([]);
+  const [socialNetwork, setSocialNetwork] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    getFooter()
+      .then((data) => {
+        setFooterData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    getSocialNetworks()
+      .then((data) => {
+        setSocialNetwork(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
+
+  return (
+    <StyledFooter>
+      <div className="waves">
+        <div className="wave" id="wave1"></div>
+        <div className="wave" id="wave2"></div>
+        <div className="wave" id="wave3"></div>
+        <div className="wave" id="wave4"></div>
+      </div>
+      <SocialNetwork className="social_icon">
+        {socialNetwork.map((network, index) => (
+          <Item key={index}>
+            <Link href={network.url} target="_blank" rel="noopener noreferrer">
+              <img
+                src={network.icon}
+                alt={network.url}
+                height={30}
+                width={30}
+              />
+            </Link>
+          </Item>
+        ))}
+        {/* <Item>
+          <Link
+            href="https://www.facebook.com/braganzavialsa/?notif_id=1651809278087232&notif_t=aymt_simplified_make_page_post&ref=notif"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ion-icon name="logo-facebook"></ion-icon>
+          </Link>
+        </Item>
+        <Item>
+          <Link
+            href="https://wa.me/+59898998465?text=Estoy%20interesado%20en%20contactarlos"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ion-icon name="logo-whatsapp"></ion-icon>
+          </Link>
+        </Item>
+        <Item>
+          <Link
+            href="https://www.instagram.com/braganzavial/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ion-icon name="logo-instagram"></ion-icon>
+          </Link>
+        </Item> */}
+      </SocialNetwork>
+      <Menu className="menu">
+        <Item>
+          <HashLinkStyled to="#inicio">Inicio</HashLinkStyled>
+        </Item>
+        <Item>
+          <HashLinkStyled to="#nuestros-servicios">Servicios</HashLinkStyled>
+        </Item>
+        <Item>
+          <HashLinkStyled to="#sobre-nosotros">Nosotros</HashLinkStyled>
+        </Item>
+        <Item>
+          <HashLinkStyled to="#proyectos">Proyectos</HashLinkStyled>
+        </Item>
+        <Item>
+          <HashLinkStyled to="#contacto">Contacto</HashLinkStyled>
+        </Item>
+      </Menu>
+      <Paragraph>{footerData.slogan}</Paragraph>
+      <Paragraph>{footerData.address}</Paragraph>
     </StyledFooter>
-    )
-}
+  );
+};
 
 export default Footer;

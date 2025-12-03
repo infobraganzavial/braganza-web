@@ -164,14 +164,7 @@ const ImagesHoverEffect = ({ sections }) => {
       <Toggle onClick={() => setActive(false)} isActive={active}>
         <i className="fa-solid fa-xmark"></i>
       </Toggle>
-      <div
-        className="section__container"
-        // style={{
-        //   backgroundImage: `url(https://res.cloudinary.com/dc2jukw2z/image/upload/v1763750986/firm-handshake_rzw1ya.webp)`,
-        // }}
-      >
-        {buildSection()}
-      </div>
+      <div className="section__container">{buildSection()}</div>
     </Wrapper>
   );
 };

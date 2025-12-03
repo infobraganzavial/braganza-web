@@ -9,7 +9,7 @@ import Loader from "../../components/loader/Loader";
 import constans from "../../helpers/constans";
 
 // Services
-import { ContactUsService as _contactUsService } from "../../services/ContactUs";
+import { sendEmail } from "../../services/ContactUs";
 
 const FormContainer = styled.div`
   min-height: calc(100vh - 100px);
@@ -17,7 +17,6 @@ const FormContainer = styled.div`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-attachment: scroll; */
   width: 100%;
 `;
 
@@ -50,9 +49,9 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     setLoading(true);
     try {
-      const response = await _contactUsService.contactUs(e);
-      // Respuesta Ok
-      if (response?.data?.data) toast.success(constans.messages.success);
+      const response = await sendEmail(e);
+
+      if (response) toast.success(constans.messages.success);
       else toast.error(constans.messages.error);
       setLoading(false);
     } catch (err) {

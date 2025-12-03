@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "./OurProject.css";
 
 const Container = styled.div`
   position: relative;
@@ -103,33 +104,44 @@ const Content = styled.section`
   }
 `;
 
-const OurProjects = ({ ourProjects }) => {
+const OurProjects = ({ ourProjects, projectBackground }) => {
+  if (!projectBackground) {
+    return <div>Loading...</div>;
+  }
+
+  if (!ourProjects) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Container>
       <IdDiv id="proyectos"></IdDiv>
       <div
+        className="container-bg"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${ourProjects.imageBg.url})`,
-          nackgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
+          backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${projectBackground.background})`,
         }}
       >
         <HexagonWrapper className="projects__hexagon-wrapper">
-          {ourProjects.content.map((s) => {
+          {ourProjects.map((project) => {
             return (
-              <Hexagon className="projects__hexagon" key={s.id}>
-                <Shape className="shape">
-                  <img src={s.images[0].url} alt="img" loading="lazy" />
-                  <Content className="content">
-                    <header>
-                      <h2>{s.title}</h2>
-                    </header>
-                    <p>{s.service}</p>
-                    <footer>{s.alliedCompany}</footer>
-                  </Content>
-                </Shape>
+              <Hexagon className="projects__hexagon" key={project.id}>
+                <div className="projectCard">
+                  <article className="shape">
+                    <img
+                      src={project.backgroundProject}
+                      alt="img"
+                      loading="lazy"
+                    />
+                    <section className="content">
+                      <header>
+                        <h2>{project.titleProject}</h2>
+                      </header>
+                      <p>{project.service}</p>
+                      <footer>{project.placeDate}</footer>
+                    </section>
+                  </article>
+                </div>
               </Hexagon>
             );
           })}
