@@ -3,6 +3,13 @@ import { HashLink } from "react-router-hash-link";
 import { useEffect, useState } from "react";
 import { getFooter, getSocialNetworks } from "../../services/Footer";
 
+const HEADER_OFFSET = 103; // ajustá a la altura real de tu header
+
+const scrollWithOffset = (el) => {
+  const y = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+  window.scrollTo({ top: y, behavior: "smooth" });
+};
+
 const StyledFooter = styled.footer`
   position: relative;
   width: 100%;
@@ -53,7 +60,9 @@ const Link = styled.a`
   }
 `;
 
-const HashLinkStyled = styled(HashLink)`
+const HashLinkStyled = styled(HashLink).attrs({
+  scroll: scrollWithOffset,
+})`
   font-size: 1.2em;
   color: #fff;
   margin: 0 10px;
@@ -127,33 +136,6 @@ const Footer = () => {
             </Link>
           </Item>
         ))}
-        {/* <Item>
-          <Link
-            href="https://www.facebook.com/braganzavialsa/?notif_id=1651809278087232&notif_t=aymt_simplified_make_page_post&ref=notif"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <ion-icon name="logo-facebook"></ion-icon>
-          </Link>
-        </Item>
-        <Item>
-          <Link
-            href="https://wa.me/+59898998465?text=Estoy%20interesado%20en%20contactarlos"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <ion-icon name="logo-whatsapp"></ion-icon>
-          </Link>
-        </Item>
-        <Item>
-          <Link
-            href="https://www.instagram.com/braganzavial/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <ion-icon name="logo-instagram"></ion-icon>
-          </Link>
-        </Item> */}
       </SocialNetwork>
       <Menu className="menu">
         <Item>
@@ -167,6 +149,9 @@ const Footer = () => {
         </Item>
         <Item>
           <HashLinkStyled to="#proyectos">Proyectos</HashLinkStyled>
+        </Item>
+        <Item>
+          <HashLinkStyled to="#clientes">Clientes</HashLinkStyled>
         </Item>
         <Item>
           <HashLinkStyled to="#contacto">Contacto</HashLinkStyled>

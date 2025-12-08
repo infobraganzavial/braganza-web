@@ -1,7 +1,7 @@
 const API_URL = process.env.REACT_APP_URL_API;
 
 export async function sendEmail({ name, email, subject, message }) {
-  const response = await fetch(`${API_URL}/api/contact`, {
+  const response = await fetch(`${API_URL}/api/contact-form`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -1,0 +1,132 @@
+.clients {
+  width: 100%;
+  background: #fff;
+  padding: 5rem 1.5rem;
+}
+
+.clients__anchor {
+  position: absolute;
+  height: calc(100vh - 100px);
+}
+
+.clients__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.clients__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.clients__title {
+  font-family: "Readex Pro", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 600;
+  margin: 0;
+}
+
+.clients__underline {
+  display: inline-block;
+  width: 110px;
+  height: 4px;
+  background: #b40000;
+  margin-top: 0.75rem;
+  border-radius: 999px;
+}
+
+.clients__grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(160px, 160px));
+
+  gap: 2.2rem 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.clients__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  padding: 0.75rem;
+  border-radius: 16px;
+  border: 0;
+  background: transparent;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.clients__logo {
+  width: auto;
+  max-width: 160px;
+  height: 60px;
+  object-fit: contain;
+  transform: scale(1);
+  transition: transform 180ms ease;
+  transform-origin: center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .clients__item:hover .clients__logo {
+    transform: scale(1.1);
+  }
+}
+
+.clients__item.is-active .clients__logo {
+  transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients__logo {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .clients__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .clients__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.clients__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  padding: 0.75rem;
+  border-radius: 16px;
+
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.clients__logo {
+  max-width: 160px;
+  height: auto;
+  object-fit: contain;
+
+  transform: scale(1);
+  transition: transform 180ms ease;
+  transform-origin: center;
+
+  width: auto;
+}
+
+@media (hover: hover) {
+  .clients__item:hover .clients__logo {
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clients__logo {
+    transition: none !important;
+  }
+}

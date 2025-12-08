@@ -1,18 +1,84 @@
+/* Root wrapper */
+.ourProjects {
+  position: relative;
+}
+
+.ourProjects__anchor {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 103px);
+}
+
+/* Background container */
 .container-bg {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+
+  /* OJO: fixed suele lagear MUCHO en móviles y algunos browsers */
+  /* background-attachment: fixed; */
 }
 
+/* Wrapper */
+.projects__hexagon-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 100px);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 1rem;
+
+  /* backdrop-filter también es caro: probá sin esto primero */
+  /* backdrop-filter: grayscale(100%); */
+}
+
+/* Card holder (antes Hexagon styled) */
+.projects__hexagon {
+  position: relative;
+  width: 30%;
+  min-width: 400px;
+  height: 400px;
+  max-height: 400px;
+  margin: 0px 5px 40px;
+}
+
+/* Sombra inferior (antes ::before en Hexagon) */
+.projects__hexagon::before {
+  content: "";
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  height: 60px;
+  background: radial-gradient(rgba(0, 0, 0, 0.15), transparent, transparent);
+  border-radius: 50%;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  opacity: 0.8;
+  transform: scale(0.8);
+}
+
+/* Card */
 .projectCard {
   position: relative;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(8px 9px 24px rgba(0, 0, 0, 0.55));
+
+  /* DROP-SHADOW + blur/filtros suelen ser caros.
+     Si lagea, cambiá esto por box-shadow en .shape (más barato). */
+  filter: none;
+
   contain: layout paint;
 }
 
+/* Shape */
 .shape {
   position: relative;
   width: 100%;
@@ -20,26 +86,55 @@
   background: #000;
   overflow: hidden;
 
+  /* Box-shadow más predecible que filter: drop-shadow */
+  box-shadow: 8px 9px 24px -4px rgba(0, 0, 0, 0.74);
+
   transform: translate3d(0, 0, 0);
   transition: transform 0.35s ease;
   backface-visibility: hidden;
+
+  will-change: transform;
 }
 
+/* Hover only where hover exists */
 @media (hover: hover) {
   .projectCard:hover .shape {
     transform: translate3d(0, -30px, 0);
   }
+
+  .projectCard:hover .content {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s;
+  }
 }
 
+.projectCard.is-active .shape {
+  transform: translate3d(0, -30px, 0);
+}
+
+.projectCard.is-active .content {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s;
+}
+
+/* Image */
 .shape > img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+
   transform: translateZ(0);
 }
 
+/* Content overlay */
 .shape .content {
   position: absolute;
   inset: 0;
@@ -59,6 +154,8 @@
   transform: translate3d(0, 10px, 0);
   transition: opacity 0.25s ease, transform 0.25s ease,
     visibility 0s linear 0.25s;
+
+  will-change: opacity, transform;
 }
 
 @media (hover: hover) {
@@ -75,9 +172,11 @@
   font-weight: 600;
 }
 
+/* Reduce Motion */
 @media (prefers-reduced-motion: reduce) {
   .shape,
-  .shape .content {
+  .shape .content,
+  .projects__hexagon::before {
     transition: none !important;
   }
 }
