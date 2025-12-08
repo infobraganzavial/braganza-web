@@ -1,153 +1,56 @@
-import styled from "styled-components";
+import { useState } from "react";
 import "./OurProject.css";
 
-const Container = styled.div`
-  position: relative;
-`;
-
-const IdDiv = styled.div`
-  position: absolute;
-  width: 100%;
-  height: calc(100vh - 103px);
-`;
-
-const HexagonWrapper = styled.article`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - 100px);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-attachment: fixed; */
-  padding: 1rem;
-  backdrop-filter: grayscale(100%);
-`;
-
-const Hexagon = styled.section`
-  position: relative;
-  width: 30%;
-  min-width: 400px;
-  height: 400px;
-  max-height: 400px;
-  margin: 0px 5px 40px;
-
-  & ::before {
-    content: "";
-    position: absolute;
-    bottom: -70px;
-    width: 100%;
-    height: 60px;
-    background: radial-gradient(rgba(0, 0, 0, 0.15), transparent, transparent);
-    border-radius: 50%;
-    transition: 0.5s;
-    opacity: 0.8;
-    transform: scale(0.8);
-  }
-`;
-
-const Shape = styled.article`
-  position: absolute;
-  top: 30px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  box-shadow: 8px 9px 24px -4px rgba(0, 0, 0, 0.74);
-  -webkit-box-shadow: 8px 9px 24px -4px rgba(0, 0, 0, 0.74);
-  -moz-box-shadow: 8px 9px 24px -4px rgba(0, 0, 0, 0.74);
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-  transition: 0.5s;
-  &:hover {
-    transform: translateY(-30px);
-  }
-  & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  &:hover .content {
-    display: flex;
-    overflow: hidden;
-  }
-`;
-
-const Content = styled.section`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  text-align: center;
-  background: rgba(244, 3, 50, 0.5);
-  color: #fff;
-  opacity: 0;
-  transition: 0.5s;
-  opacity: 1;
-
-  & header h2 {
-    font-weight: 600;
-  }
-`;
-
 const OurProjects = ({ ourProjects, projectBackground }) => {
-  if (!projectBackground) {
-    return <div>Loading...</div>;
-  }
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  if (!ourProjects) {
-    return <div>Loading...</div>;
-  }
+  const toggleActive = (idx) => {
+    setActiveIndex((prev) => (prev === idx ? null : idx));
+  };
+
+  if (!projectBackground || !ourProjects) return <div>Cargando...</div>;
 
   return (
-    <Container>
-      <IdDiv id="proyectos"></IdDiv>
+    <div className="ourProjects">
+      <div className="ourProjects__anchor" id="proyectos" />
+
       <div
         className="container-bg"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(245, 246, 252, 0.3), rgba(0, 0, 0, 0.1)), url(${projectBackground.background})`,
         }}
       >
-        <HexagonWrapper className="projects__hexagon-wrapper">
-          {ourProjects.map((project) => {
-            return (
-              <Hexagon className="projects__hexagon" key={project.id}>
-                <div className="projectCard">
-                  <article className="shape">
-                    <img
-                      src={project.backgroundProject}
-                      alt="img"
-                      loading="lazy"
-                    />
-                    <section className="content">
-                      <header>
-                        <h2>{project.titleProject}</h2>
-                      </header>
-                      <p>{project.service}</p>
-                      <footer>{project.placeDate}</footer>
-                    </section>
-                  </article>
-                </div>
-              </Hexagon>
-            );
-          })}
-        </HexagonWrapper>
+        <div className="projects__hexagon-wrapper">
+          {ourProjects.map((project, index) => (
+            <section className="projects__hexagon" key={index}>
+              <div
+                className={`projectCard ${
+                  activeIndex === index ? "is-active" : ""
+                }`}
+                onClick={() => toggleActive(index)}
+              >
+                <article className="shape">
+                  <img
+                    src={project.backgroundProject}
+                    alt="img"
+                    loading="lazy"
+                    decoding="async"
+                  />
+
+                  <section className="content">
+                    <header>
+                      <h2>{project.titleProject}</h2>
+                    </header>
+                    <p>{project.service}</p>
+                    <footer>{project.placeDate}</footer>
+                  </section>
+                </article>
+              </div>
+            </section>
+          ))}
+        </div>
       </div>
-    </Container>
+    </div>
   );
 };
 

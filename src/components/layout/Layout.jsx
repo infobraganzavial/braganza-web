@@ -35,6 +35,10 @@ const Layout = (props) => {
       routerLink: "/#proyectos",
     },
     {
+      label: "Clientes",
+      routerLink: "/#clientes",
+    },
+    {
       label: "Contacto",
       routerLink: "/#contacto",
     },
