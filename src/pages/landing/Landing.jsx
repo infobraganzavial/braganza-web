@@ -108,7 +108,7 @@ const Landing = () => {
         ourProjects={ourProjects}
         projectBackground={projectBackground}
       />
-      <Clients logos={clients} />
+      {/* <Clients logos={clients} /> */}
       <ContactUs />
     </>
   );
